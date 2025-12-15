@@ -1,6 +1,5 @@
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
-import Reality from './components/Reality'
 import WhatIsDoula from './components/WhatIsDoula'
 import Approach from './components/Approach'
 import Services from './components/Services'
@@ -15,7 +14,6 @@ function App() {
       <Navigation />
       <main>
         <Hero />
-        <Reality />
         <WhatIsDoula />
         <Approach />
         <Services />
