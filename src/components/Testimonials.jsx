@@ -1,14 +1,9 @@
 import { motion } from 'framer-motion'
 import testimonialsImage from '../assets/images/testimonials-image.webp'
 
-export default function Testimonials() {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+const BOOKING_URL = 'https://calendar.app.google/9HjRBQhJGpE6YCzv5'
 
+export default function Testimonials() {
   const testimonials = [
     {
       quote:
@@ -124,12 +119,14 @@ export default function Testimonials() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <button
-            onClick={scrollToContact}
-            className="bg-coral hover:bg-coral-dark text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-coral/25 cursor-pointer border-none"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-coral hover:bg-coral-dark text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-coral/25 no-underline"
           >
             Book a free consultation
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

@@ -1,14 +1,9 @@
 import { motion } from 'framer-motion'
 import heroImage from '../assets/images/hero-image.webp'
 
-export default function Hero() {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
+const BOOKING_URL = 'https://calendar.app.google/9HjRBQhJGpE6YCzv5'
 
+export default function Hero() {
   return (
     <section
       id="hero"
@@ -49,9 +44,11 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
             >
-              <button
-                onClick={scrollToContact}
-                className="group bg-coral hover:bg-coral-dark text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-xl hover:shadow-coral/25 cursor-pointer border-none inline-flex items-center gap-2"
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-coral hover:bg-coral-dark text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-xl hover:shadow-coral/25 inline-flex items-center gap-2 no-underline"
               >
                 Book a Free Consultation
                 <svg
@@ -62,7 +59,7 @@ export default function Hero() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </button>
+              </a>
             </motion.div>
           </motion.div>
 

@@ -65,7 +65,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-coral hover:bg-coral-dark text-white py-4 px-8 rounded-full font-medium transition-all duration-300 hover:shadow-xl hover:shadow-coral/25 no-underline"
             >
-              Schedule a discovery call
+              Schedule a free consult
               <svg
                 className="w-5 h-5"
                 fill="none"

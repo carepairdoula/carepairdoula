@@ -65,15 +65,9 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Contact */}
+          {/* Location */}
           <div className="text-center md:text-right">
-            <p className="text-cream/80 text-sm mb-1">Greater Toronto Area</p>
-            <a
-              href="mailto:info@carepair.ca"
-              className="text-cream hover:text-coral-light transition-colors duration-200 underline-offset-4 hover:underline"
-            >
-              info@carepair.ca
-            </a>
+            <p className="text-cream/80 text-sm">Greater Toronto Area</p>
           </div>
         </motion.div>
 

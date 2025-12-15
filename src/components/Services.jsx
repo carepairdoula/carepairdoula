@@ -1,13 +1,10 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import servicesImage from '../assets/images/services-image.webp'
 
+const BOOKING_URL = 'https://calendar.app.google/9HjRBQhJGpE6YCzv5'
+
 export default function Services() {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
 
   const services = [
     {
@@ -128,16 +125,18 @@ export default function Services() {
                     ))}
                   </div>
 
-                  <button
-                    onClick={scrollToContact}
-                    className={`w-full py-4 rounded-full font-medium transition-all duration-300 cursor-pointer border-none ${
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block w-full py-4 rounded-full font-medium transition-all duration-300 text-center no-underline ${
                       service.accent === 'coral'
                         ? 'bg-coral hover:bg-coral-dark text-white hover:shadow-lg hover:shadow-coral/25'
                         : 'bg-sage hover:bg-sage-dark text-white hover:shadow-lg hover:shadow-sage/25'
                     }`}
                   >
                     Book a free consultation
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -167,12 +166,12 @@ export default function Services() {
                 Celebrate new beginnings with a gift certificate for birth and postpartum support services. Perfect for friends and family who want to offer meaningful help during this transformative time. Gift certificates can be used towards any of our personalized care packages, ensuring the recipient receives exactly the support they need.
               </p>
 
-              <button
-                onClick={scrollToContact}
-                className="w-full sm:w-auto px-8 py-4 rounded-full font-medium transition-all duration-300 cursor-pointer border-none bg-charcoal hover:bg-charcoal-light text-white hover:shadow-lg"
+              <Link
+                to="/gift-certificate"
+                className="inline-block w-full sm:w-auto px-8 py-4 rounded-full font-medium transition-all duration-300 bg-charcoal hover:bg-charcoal-light text-white hover:shadow-lg text-center no-underline"
               >
                 Request a gift certificate
-              </button>
+              </Link>
             </div>
           </div>
         </motion.div>
