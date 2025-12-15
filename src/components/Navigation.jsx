@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '../assets/images/logo.svg'
 
+const BOOKING_URL = 'https://calendar.app.google/9HjRBQhJGpE6YCzv5'
+
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -15,11 +17,14 @@ export default function Navigation() {
   }, [])
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setIsMobileMenuOpen(false)
-    }
+    setIsMobileMenuOpen(false)
+    // Small delay to let the menu close animation start before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(id)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 100)
   }
 
   const navLinks = [
@@ -44,6 +49,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <button
+            type="button"
             onClick={() => scrollToSection('hero')}
             className="flex items-center cursor-pointer bg-transparent border-none"
           >
@@ -58,6 +64,7 @@ export default function Navigation() {
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
+                type="button"
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
                 className="text-charcoal hover:text-coral transition-colors duration-200 font-sans text-sm tracking-wide bg-transparent border-none cursor-pointer"
@@ -65,18 +72,21 @@ export default function Navigation() {
                 {link.label}
               </button>
             ))}
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-coral hover:bg-coral-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 hover:shadow-lg cursor-pointer border-none"
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-coral hover:bg-coral-dark text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 hover:shadow-lg no-underline"
             >
               Book a Call
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-charcoal bg-transparent border-none cursor-pointer"
+            className="md:hidden relative z-50 p-2 text-charcoal bg-transparent border-none cursor-pointer"
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
           >
@@ -118,6 +128,7 @@ export default function Navigation() {
               <div className="py-4 px-4 space-y-1">
                 {navLinks.map((link) => (
                   <button
+                    type="button"
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
                     className="block w-full text-left py-3 px-4 text-charcoal hover:text-coral hover:bg-cream-dark rounded-xl transition-colors duration-200 bg-transparent border-none cursor-pointer"
@@ -125,12 +136,14 @@ export default function Navigation() {
                     {link.label}
                   </button>
                 ))}
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="w-full mt-2 bg-coral hover:bg-coral-dark text-white py-3 px-4 rounded-xl text-center font-medium transition-all duration-200 cursor-pointer border-none"
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full mt-2 bg-coral hover:bg-coral-dark text-white py-3 px-4 rounded-xl text-center font-medium transition-all duration-200 no-underline"
                 >
                   Book a Call
-                </button>
+                </a>
               </div>
             </motion.div>
           )}
