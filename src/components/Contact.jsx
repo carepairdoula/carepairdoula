@@ -22,7 +22,7 @@ export default function Contact() {
             Ready to be supported?
           </h2>
           <p className="text-lg text-charcoal-light max-w-2xl mx-auto">
-            Whether you're still deciding, just found out you're pregnant, or due next month, I'd love to chat. A discovery call is free, no pressure, and just a simple starting point to see if we're a good fit.
+            Whether you're planning for birth, navigating postpartum, or anywhere in between, I'm here to support you. Let's connect with a free, no-pressure discovery call to see if working together feels like the right fit.
           </p>
         </motion.div>
 
@@ -56,7 +56,7 @@ export default function Contact() {
             </h3>
 
             <p className="text-charcoal-light mb-8 max-w-md mx-auto">
-              Pick a time that works for you. We'll chat for about 30 minutes—no commitment, no pressure.
+              Pick a time that works for you. We'll chat for about 30 minutes.
             </p>
 
             <a
@@ -65,7 +65,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-coral hover:bg-coral-dark text-white py-4 px-8 rounded-full font-medium transition-all duration-300 hover:shadow-xl hover:shadow-coral/25 no-underline"
             >
-              Schedule a free consult
+              Schedule a Free Consult
               <svg
                 className="w-5 h-5"
                 fill="none"

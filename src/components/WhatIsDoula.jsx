@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import aboutImage from '../assets/images/about-image.webp'
+import aboutImage from '../assets/images/hero-image.webp'
 
 export default function WhatIsDoula() {
   return (
@@ -33,15 +33,15 @@ export default function WhatIsDoula() {
           >
             <div className="space-y-5 text-charcoal-light text-lg leading-relaxed">
               <p>
-                As your Birth Doula, I'm with you before, during, and after. I learn what matters to you, what scares you, what you're hoping for. I help you ask questions, advocate for yourself, and stay grounded—even when things don't go as planned.
+                As your Birth Doula, I'm with you before, during, and after your baby arrives. I learn what matters to you, what scares you, and what you're hoping for. I help you advocate for yourself, and stay grounded; even when things don't go as planned.
               </p>
 
               <p>
-                Whether you're planning a home birth, a hospital birth with every intervention available, or you're still figuring it out—my job is to support your choices. Not judge them.
+                Whether you're planning a home birth, a hospital birth with every intervention available, or you're still figuring it out, my job is to support your choices. Not judge them.
               </p>
 
               <p>
-                My role isn't to replace your medical team. It's to fill in the gaps: emotional support, physical comfort, informed guidance, and a calm presence when you need it most.
+                I work with your medical team while filling in the gaps: emotional support, physical comfort, informed guidance, and a calm presence when you need it most.
               </p>
             </div>
           </motion.div>
@@ -77,15 +77,15 @@ export default function WhatIsDoula() {
         >
           <div className="max-w-3xl space-y-5 text-charcoal-light text-lg leading-relaxed">
             <p>
-              As your Postpartum Doula, I'm there with you after your baby is born—helping you adjust to this new phase of life. I take the time to understand what you're going through, what you need most, and how I can best support you.
+              As your Postpartum Doula, I'm there with you after your baby is born, helping you adjust to this new phase of life. I take the time to understand what you need most and how I can best support you.
             </p>
 
             <p>
-              No matter how you're feeling—whether it's joy, exhaustion, or uncertainty—I support your choices and honor your experience. I'm here to offer guidance and hands-on help so you can feel more supported and empowered during this special, sometimes overwhelming time.
+              No matter how you're feeling, whether it's joy, exhaustion, or uncertainty; I support your choices and honor your experience. I'm here to offer guidance and hands-on help so you can feel more empowered during this special (sometimes overwhelming) time.
             </p>
 
             <p className="text-charcoal font-medium">
-              My goal is to provide a calm, nurturing presence that helps you feel more confident and less alone as you navigate this incredible, sometimes challenging, postpartum experience.
+              My goal is to provide a calm, nurturing presence that helps you feel less alone and more confident.
             </p>
           </div>
         </motion.div>

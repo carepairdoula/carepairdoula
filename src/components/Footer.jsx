@@ -46,7 +46,7 @@ export default function Footer() {
             <img
               src={logo}
               alt="Carepair"
-              className="h-16 w-auto brightness-0 invert opacity-90 mx-auto md:mx-0"
+              className="h-20 sm:h-24 w-auto brightness-0 invert opacity-90 mx-auto md:mx-0"
             />
           </div>
 

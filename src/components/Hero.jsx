@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import heroImage from '../assets/images/hero-image.webp'
+import heroImage from '../assets/images/about-image.webp'
 
 const BOOKING_URL = 'https://calendar.app.google/9HjRBQhJGpE6YCzv5'
 
@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center overflow-hidden pt-28"
     >
       {/* Background organic shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -25,7 +25,7 @@ export default function Hero() {
             className="text-center lg:text-left"
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl text-charcoal mb-6 leading-tight">
-              You don't have to do this alone.
+              Customized Support Every Step of the Way
             </h1>
 
             <motion.p
@@ -34,9 +34,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
               className="text-lg sm:text-xl text-charcoal-light leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Birth is one of life's most profound experiences—and one of its most overwhelming.
-              Whether you're preparing for labor, navigating decisions, or facing the fourth trimester,
-              you deserve someone in your corner. Not just anyone. Someone who shows up for <em className="text-coral font-medium not-italic">you</em>.
+              Birth is a beautiful and transformative journey. From preparing for labor to embracing the early days of parenthood, having dedicated support by your side can make all the difference. You deserve someone who is fully present and attentive to your unique experience.
             </motion.p>
 
             <motion.div

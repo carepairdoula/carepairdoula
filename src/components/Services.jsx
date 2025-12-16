@@ -13,10 +13,10 @@ export default function Services() {
       intro:
         'Labor is unpredictable, and having continuous support can make all the difference. As your birth doula, I provide emotional, physical, and informational support before, during, and after delivery.',
       includes: [
-        'Two prenatal visits — We\'ll discuss your vision, create your birth plan and prepare you for what\'s ahead.',
-        '24 hour on-call availability as your due date approaches. Day or night, I\'m a text/call away.',
+        'Two prenatal visits. We\'ll discuss your vision, create your birth plan and prepare you for what\'s ahead.',
+        '24 hour on-call availability as your due date approaches. Day or night, I\'m only a text or call away.',
         'Continuous labor support from the moment I arrive until 1 hour after the baby is born. Comfort measures, positioning, breathing techniques, and a calm presence through every contraction.',
-        'One postpartum visit — We\'ll debrief your birth experience, discuss early feeding, and make sure you\'re adjusting well.',
+        'One postpartum visit. We\'ll debrief your birth experience, discuss early feeding, and make sure you\'re adjusting well.',
       ],
       accent: 'coral',
     },
@@ -24,13 +24,12 @@ export default function Services() {
       type: 'Postpartum Doula',
       tagline: 'The fourth trimester matters',
       intro:
-        'The first weeks with a newborn is beautiful and exhausting. Sleepless nights, feeding challenges, creating a routine that works for everyone in the home — postpartum support helps you recover, adjust, and bond with your baby without burning out.',
+        'The first weeks with a newborn are beautiful and exhausting. Sleepless nights, feeding challenges, creating a routine that works for everyone in the home. Postpartum support helps you recover, adjust, and bond with your baby without burning out.',
       includes: [
-        'In-home support visits',
+        'In-home day and overnight support',
         'Newborn care guidance — Feeding support (breast or bottle), diapering, bathing, soothing techniques, and sleep strategies.',
         'Physical recovery support — Light meal prep and household tasks so you can focus on healing.',
         'Emotional support — Processing the birth experience, adjusting to your new identity, and watching for signs of postpartum mood disorders.',
-        'Sibling and family adjustment — Helping older kids adjust to the new baby, giving them attention while you rest.',
       ],
       accent: 'sage',
     },
@@ -135,7 +134,7 @@ export default function Services() {
                         : 'bg-sage hover:bg-sage-dark text-white hover:shadow-lg hover:shadow-sage/25'
                     }`}
                   >
-                    Book a free consultation
+                    Book a Free Consultation
                   </a>
                 </div>
               </div>
@@ -170,7 +169,7 @@ export default function Services() {
                 to="/gift-certificate"
                 className="inline-block w-full sm:w-auto px-8 py-4 rounded-full font-medium transition-all duration-300 bg-charcoal hover:bg-charcoal-light text-white hover:shadow-lg text-center no-underline"
               >
-                Request a gift certificate
+                Request a Gift Certificate
               </Link>
             </div>
           </div>

@@ -46,7 +46,7 @@ export default function Navigation() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-24 sm:h-28">
           {/* Logo */}
           <button
             type="button"
@@ -56,7 +56,7 @@ export default function Navigation() {
             <img
               src={logo}
               alt="Carepair - Customized Support For Birth & Beyond"
-              className="h-14 sm:h-16 w-auto brightness-0 opacity-80"
+              className="h-20 sm:h-24 w-auto brightness-0 opacity-80"
             />
           </button>
 

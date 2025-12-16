@@ -9,19 +9,19 @@ export default function Testimonials() {
       quote:
         "During my first pregnancy, I truly don't know what I would have done without her by my side. While I had planned for a natural birth, life had other plans, and I ended up having a C-section. It wasn't easy, but having her emotional and physical support made all the difference. Mimi was there when I needed strength, calm when I felt overwhelmed, and a comforting presence during every high and low. Her care helped me heal and recover faster, and I'll never forget the love and support she showed me through it all.",
       author: 'Roda',
-      tag: 'Birth Doula Client',
+      tag: 'Birth Client',
     },
     {
       quote:
         "Mimi gave us so much peace of mind during a really exhausting time. Her calm energy, knowledge, and the way she cared for our baby made such a big difference for our whole family. She was so playful with the baby and has a sweet, gentle presence. We're so grateful for her support.",
       author: 'Anne',
-      tag: 'Postpartum Doula Client',
+      tag: 'Postpartum Client',
     },
     {
       quote:
         "Mimi originally came to us as a back up Doula for overnight care and we fell in love with her warmth and kind energy. She then became our night nurse, helping with our baby while he was between 3 and 7 months old. Mimi is very knowledgeable about baby sleep she also took great care of me. I am a first time mom who wasn't initially comfortable not having my baby beside me all night. Mimi, gave me the reassurance I needed to get a good night rest and trust that my baby's needs were being met with love and deep care.",
       author: 'Sarah',
-      tag: 'Postpartum Doula Client',
+      tag: 'Postpartum Client',
     },
   ]
 
@@ -41,7 +41,7 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-charcoal leading-tight">
-            Families I've supported.
+            Families I've Supported
           </h2>
         </motion.div>
 
@@ -125,7 +125,7 @@ export default function Testimonials() {
             rel="noopener noreferrer"
             className="inline-block bg-coral hover:bg-coral-dark text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-coral/25 no-underline"
           >
-            Book a free consultation
+            Book a Free Consultation
           </a>
         </motion.div>
       </div>

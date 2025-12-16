@@ -13,7 +13,7 @@ export default function FAQ() {
     {
       question: 'When should I book a doula?',
       answer:
-        "For birth doula support, earlier is better—ideally during your second trimester. This gives us time to build a relationship, work through your birth preferences, and make sure you feel fully prepared. That said, if you're reading this and your due date is approaching, don't count yourself out—reach out and let's talk.\n\nFor postpartum doula support, you can book anytime—even after the baby arrives. Many families don't realize they need support until they're in the thick of it.",
+        "For birth doula support, earlier is better. Ideally during your second trimester. This gives us time to build a relationship, work through your birth preferences, and make sure you feel fully prepared. That said, if you're reading this and your due date is approaching, that's okay too. Reach out and let's talk.\n\nFor postpartum doula support, you can book anytime; even after the baby arrives. Many families don't realize they need support until they're in the thick of it.",
     },
     {
       question: 'What if my partner feels replaced?',
@@ -21,14 +21,14 @@ export default function FAQ() {
         "This is a common concern, and I take it seriously. My job isn't to replace your partner—it's to empower them. During labor, I guide partners on how to help with comfort measures, when to offer support, and when to step back. Most partners tell me afterward that they felt more involved, not less.",
     },
     {
-      question: "What's the difference between a doula and a midwife?",
+      question: "What is the difference between a doula and a midwife?",
       answer:
-        "A midwife is a medical professional who can deliver your baby, perform exams, and handle clinical care. A doula provides non-medical support—emotional, physical, and informational. We work alongside your medical team (whether that's an OB, midwife, or both) but don't perform any clinical tasks.",
+        "A midwife is a medical professional who can deliver your baby, perform exams, and handle clinical care. A doula provides emotional, physical, and informational support. We work alongside your medical team (whether that's an OB or a midwife) as your dedicated support person.",
     },
     {
-      question: 'How much does it cost?',
+      question: 'Are doulas covered by insurance?',
       answer:
-        "Every care plan is customized, so pricing varies. Book a free consultation and we'll talk through your needs—then I'll provide a clear quote with no surprises.",
+        "Although doula services are not covered by OHIP, some insurance plans do provide coverage. Check with your provider for details.",
     },
   ]
 
@@ -47,7 +47,7 @@ export default function FAQ() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-charcoal leading-tight">
-            Questions you might have.
+            Questions you might have
           </h2>
         </motion.div>
 
