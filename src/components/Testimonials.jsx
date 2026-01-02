@@ -23,6 +23,12 @@ export default function Testimonials() {
       author: 'Sarah',
       tag: 'Postpartum Client',
     },
+    {
+      quote:
+        "Mimi supported us as both our birth and postpartum doula. She helped me develop a clear birth plan, explaining options in detail and preparing me to advocate for myself throughout the process. She also coached my partner on how to be involved, which made us stronger as a team. During postpartum, her practical guidance around feeding and managing reflux made day-to-day care much more manageable. Knowledgeable and professional, I'd confidently recommend her to anyone seeking doula support.",
+      author: 'Devika',
+      tag: 'Birth and Postpartum Client',
+    },
   ]
 
   return (
