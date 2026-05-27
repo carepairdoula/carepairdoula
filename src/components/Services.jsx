@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import nurseryAfter1 from '../assets/images/nursery-after-1.webp'
 import nurseryAfter2 from '../assets/images/nursery-after-2.webp'
 import nurseryAfter3 from '../assets/images/nursery-after-3.webp'
-import nurseryAfter4 from '../assets/images/nursery-after-4.webp'
 import nurseryBefore1 from '../assets/images/nursery-before-1.webp'
 import nurseryBefore2 from '../assets/images/nursery-before-2.webp'
 
