@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import nurseryAfter from '../assets/images/nursery-after-1.webp'
-import nurseryBefore from '../assets/images/nursery-before-1.webp'
+import nurseryAfter1 from '../assets/images/nursery-after-1.webp'
+import nurseryAfter2 from '../assets/images/nursery-after-2.webp'
+import nurseryAfter3 from '../assets/images/nursery-after-3.webp'
+import nurseryAfter4 from '../assets/images/nursery-after-4.webp'
+import nurseryBefore1 from '../assets/images/nursery-before-1.webp'
+import nurseryBefore2 from '../assets/images/nursery-before-2.webp'
 
 const BOOKING_URL = 'https://calendar.app.google/9HjRBQhJGpE6YCzv5'
 
@@ -33,7 +37,7 @@ const educationSessions = [
       'Counterpressure, massage, and touch techniques',
       'Medical pain management: nitrous oxide, IV medications, and epidurals',
       'Creating your personalized comfort toolkit',
-      'When and how to change your pain-management plan',
+      'When and how to change your pain management plan',
     ],
   },
   {
@@ -91,7 +95,7 @@ const educationSessions = [
       'Understanding your partner\'s physical and emotional experience',
       'Active labour support: positioning, counterpressure, and encouragement',
       'What to say (and not say) during labour',
-      'Supporting pain-management decisions and being an advocate',
+      'Supporting pain management decisions and being an advocate',
       'Your role during caesarean birth or medical interventions',
       'Immediate postpartum: supporting healing and bonding',
       'Practical postpartum help: what partners can do in the early weeks',
@@ -123,10 +127,10 @@ export default function Services() {
 
   const mainServices = [
     {
+      id: 'birth-doula',
       type: 'Birth Doula',
       tagline: 'Your guide through labour and delivery',
-      intro:
-        'Labour is unpredictable. Having knowledgeable and continuous support can make all the difference. As your Birth Doula, I provide emotional, physical, and informational support before, during, and after delivery.',
+      intro: 'Labour is unpredictable. Having knowledgeable and continuous support can make all the difference. As your Birth Doula, I provide emotional, physical, and informational support before, during, and after delivery.',
       includes: [
         'Two prenatal visits. We\'ll discuss your situation and preferences, and create a unique birth plan, so that you\'re prepared for what\'s ahead.',
         '24 hour availability as your due date approaches. Day or night, I\'m only a text or call away.',
@@ -136,15 +140,15 @@ export default function Services() {
       accent: 'coral',
     },
     {
+      id: 'postpartum-doula',
       type: 'Postpartum Doula',
       tagline: 'The fourth trimester matters',
-      intro:
-        'Caring for a newborn is beautiful, but sleepless nights, feeding challenges, and creating a routine that works for everyone in the home can be exhausting. Postpartum support helps you rest, process, and reflect, so that you can bond with and nurture your baby while healing and recovering.',
+      intro: 'Caring for a newborn is beautiful, but sleepless nights, feeding challenges, and creating a routine that works for everyone in the home can be exhausting. Postpartum support helps you rest, process, and reflect, so that you can bond with and nurture your baby while healing and recovering.',
       includes: [
         'In-home day and overnight support',
-        'Newborn care guidance — Feeding support (breast or bottle), diapering, bathing, soothing techniques, and sleep strategies.',
-        'Physical recovery support — Light meal prep and household tasks so you can focus on healing.',
-        'Emotional support — Processing the birth experience, adjusting to your new identity, and watching for signs of postpartum mood disorders.',
+        'Newborn care guidance. Feeding support (breast or bottle), diapering, bathing, soothing techniques, and sleep strategies.',
+        'Physical recovery support. Light meal prep and household tasks so you can focus on healing.',
+        'Emotional support. Processing the birth experience, adjusting to your new identity, and watching for signs of postpartum mood disorders.',
       ],
       accent: 'sage',
     },
@@ -174,7 +178,7 @@ export default function Services() {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:shadow-coral/10">
+            <div id="education-sessions" className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:shadow-coral/10">
               <div className="px-8 pt-8 pb-6 bg-gradient-to-br from-coral/10 to-coral-light/5">
                 <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">
                   Private Birth & Newborn Care Education Sessions
@@ -183,13 +187,17 @@ export default function Services() {
               </div>
 
               <div className="p-8">
+                <p className="text-charcoal-light leading-relaxed mb-3">
+                  Hospital classes cover the basics. These sessions go deeper. Held in the comfort of your own home, each session is tailored to your questions, your concerns, and your specific situation — not a room full of strangers.
+                </p>
+                <p className="text-charcoal-light leading-relaxed mb-3">
+                  You get my full attention, honest answers, and information you can actually use. Your partner learns how to be genuinely helpful, not just present. Sensitive topics get the privacy they deserve. And because we use your own baby gear, there's no guesswork about how things work once I leave.
+                </p>
                 <p className="text-charcoal-light leading-relaxed mb-6">
-                  Preparing for birth and caring for a newborn can feel overwhelming. These personalized, in-home sessions give you the practical knowledge and confidence you need — at your own pace, in your own space, with hands-on practice using your own baby gear. Choose the sessions that are most relevant to you.
+                  Sessions are available individually or in any combination. Each one is paced to how you learn, not to a fixed schedule.
                 </p>
 
-                <p className="text-charcoal font-medium mb-4">Choose the sessions that matter most to you:</p>
-
-                <div className="space-y-3 mb-8">
+                <div className="space-y-2 mb-8">
                   {educationSessions.map((session, index) => (
                     <div key={index} className="border border-cream-dark rounded-2xl overflow-hidden">
                       <button
@@ -229,7 +237,7 @@ export default function Services() {
                           >
                             <div className="px-6 pb-5">
                               <p className="text-sm text-coral font-medium mb-3 italic">{session.tagline}</p>
-                              <div className="space-y-2">
+                              <div className="space-y-1">
                                 {session.topics.map((topic, i) => (
                                   <p key={i} className="text-charcoal-light text-sm leading-relaxed pl-4 border-l-2 border-cream-dark">
                                     {topic}
@@ -267,32 +275,15 @@ export default function Services() {
                 transition={{ duration: 0.6, delay: index * 0.15 }}
                 className="group"
               >
-                <div
-                  className={`h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ${
-                    service.accent === 'coral'
-                      ? 'hover:shadow-coral/10'
-                      : 'hover:shadow-sage/10'
-                  }`}
-                >
-                  <div
-                    className={`px-8 pt-8 pb-6 ${
-                      service.accent === 'coral'
-                        ? 'bg-gradient-to-br from-coral/10 to-coral-light/5'
-                        : 'bg-gradient-to-br from-sage/10 to-sage-light/5'
-                    }`}
-                  >
-                    <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">
-                      {service.type}
-                    </h3>
-                    <p className={`font-medium ${service.accent === 'coral' ? 'text-coral' : 'text-sage'}`}>
-                      {service.tagline}
-                    </p>
+                <div id={service.id} className={`h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ${service.accent === 'coral' ? 'hover:shadow-coral/10' : 'hover:shadow-sage/10'}`}>
+                  <div className={`px-8 pt-8 pb-6 ${service.accent === 'coral' ? 'bg-gradient-to-br from-coral/10 to-coral-light/5' : 'bg-gradient-to-br from-sage/10 to-sage-light/5'}`}>
+                    <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">{service.type}</h3>
+                    <p className={`font-medium ${service.accent === 'coral' ? 'text-coral' : 'text-sage'}`}>{service.tagline}</p>
                   </div>
-
                   <div className="p-8">
-                    <p className="text-charcoal-light leading-relaxed mb-6">{service.intro}</p>
-                    <p className="text-charcoal font-medium mb-4">What's Included:</p>
-                    <div className="space-y-3 mb-8">
+                    <p className="text-charcoal-light leading-relaxed mb-4">{service.intro}</p>
+                    <p className="text-charcoal font-medium mb-3">What's Included:</p>
+                    <div className="space-y-2 mb-8">
                       {service.includes.map((item, i) => (
                         <p key={i} className="text-charcoal-light leading-relaxed pl-4 border-l-2 border-cream-dark">
                           {item}
@@ -303,11 +294,7 @@ export default function Services() {
                       href={BOOKING_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`block w-full py-4 rounded-full font-medium transition-all duration-300 text-center no-underline ${
-                        service.accent === 'coral'
-                          ? 'bg-coral hover:bg-coral-dark text-white hover:shadow-lg hover:shadow-coral/25'
-                          : 'bg-sage hover:bg-sage-dark text-white hover:shadow-lg hover:shadow-sage/25'
-                      }`}
+                      className={`block w-full py-4 rounded-full font-medium transition-all duration-300 text-center no-underline ${service.accent === 'coral' ? 'bg-coral hover:bg-coral-dark text-white hover:shadow-lg hover:shadow-coral/25' : 'bg-sage hover:bg-sage-dark text-white hover:shadow-lg hover:shadow-sage/25'}`}
                     >
                       Book a Free Consultation
                     </a>
@@ -324,27 +311,30 @@ export default function Services() {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:shadow-sage/10">
+            <div id="nursery-service" className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:shadow-sage/10">
               <div className="px-8 pt-8 pb-6 bg-gradient-to-br from-sage/10 to-sage-light/5">
                 <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">
                   Nursery Setup, Curation & Organisation
                 </h3>
-                <p className="font-medium text-sage">Your nursery, ready before you are.</p>
+                <p className="font-medium text-sage">A calm, functional space. Ready when you are.</p>
               </div>
 
               <div className="p-8">
-                <p className="text-charcoal-light leading-relaxed mb-6">
-                  The gifts are piled up. The drawers are overflowing. You're exhausted and the baby isn't even here yet. This fully hands-on, in-home service transforms your nursery into a calm, functional space — every item sorted, stored, and within reach — before you bring your baby home.
+                <p className="text-charcoal-light leading-relaxed mb-3">
+                  Baby gifts pile up fast. Clothes come in every size. Gear arrives in boxes. Before long, the nursery is overwhelming — and finding what you need at 3am shouldn't require a search.
+                </p>
+                <p className="text-charcoal-light leading-relaxed mb-4">
+                  This fully hands-on, in-home service transforms your nursery into a space that works — beautifully and practically. Every item sorted, stored, and within reach. A system that makes sense and actually holds.
                 </p>
 
-                <p className="text-charcoal font-medium mb-4">What's Included:</p>
-                <div className="space-y-3 mb-8">
+                <p className="text-charcoal font-medium mb-3">What's Included:</p>
+                <div className="space-y-2 mb-6">
                   {[
-                    'A complete sort and setup of your nursery — closet, dresser, changing station, and storage areas',
-                    'A customized organization system built around how you\'ll actually use the space',
-                    'Essential supplies included: vacuum seal bags, closet organizers, dresser dividers, and labels',
-                    'Every item categorized — immediate use, upcoming needs, and long-term storage — so nothing gets lost',
-                    'A simple maintenance plan so the system holds long after we\'re done',
+                    'A complete hands-on setup of your nursery — dresser, closet, changing station, and storage',
+                    'Every item sorted by immediate need, upcoming use, and long-term storage so nothing gets lost',
+                    'A custom organization system built around how you\'ll actually use the space',
+                    'Vacuum seal bags, closet organizers, dresser dividers, and labels included',
+                    'A simple maintenance plan so the system stays intact',
                   ].map((item, i) => (
                     <p key={i} className="text-charcoal-light leading-relaxed pl-4 border-l-2 border-cream-dark">
                       {item}
@@ -352,33 +342,31 @@ export default function Services() {
                   ))}
                 </div>
 
-                <p className="text-sm text-charcoal-light mb-8 italic">
-                  Most nurseries take 4–6 hours. Larger rooms or bathroom organization may extend the timeline. Investment is confirmed after a brief consultation. Client provides all furniture and laundry baskets; additional supplies beyond the included basics are billed separately.
-                </p>
-
-                {/* Before / After Photos */}
+                {/* Before & After Photos — 2 column grid */}
                 <div className="mb-8">
-                  <p className="text-charcoal font-medium mb-4">Before & After:</p>
-                  <div className="grid grid-cols-2 gap-3">
+                  <p className="text-charcoal font-medium mb-3">Before & After:</p>
+                  <div className="grid grid-cols-2 gap-3 mb-3">
                     <div className="relative">
-                      <img
-                        src={nurseryBefore}
-                        alt="Nursery before organization"
-                        className="w-full h-48 sm:h-64 object-cover rounded-2xl opacity-90 saturate-[0.85]"
-                      />
-                      <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">
-                        Before
-                      </span>
+                      <img src={nurseryBefore1} alt="Nursery before" className="w-full rounded-2xl object-contain bg-cream-dark/20" />
+                      <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
                     </div>
                     <div className="relative">
-                      <img
-                        src={nurseryAfter}
-                        alt="Nursery after organization"
-                        className="w-full h-48 sm:h-64 object-cover rounded-2xl opacity-90 saturate-[0.85]"
-                      />
-                      <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">
-                        After
-                      </span>
+                      <img src={nurseryAfter1} alt="Nursery after" className="w-full rounded-2xl object-contain bg-cream-dark/20" />
+                      <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="relative">
+                      <img src={nurseryBefore2} alt="Nursery before detail" className="w-full rounded-2xl object-contain bg-cream-dark/20" />
+                      <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
+                    </div>
+                    <div className="relative">
+                      <img src={nurseryAfter2} alt="Nursery after detail" className="w-full rounded-2xl object-contain bg-cream-dark/20" />
+                      <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
+                    </div>
+                    <div className="relative">
+                      <img src={nurseryAfter3} alt="Nursery after overview" className="w-full rounded-2xl object-contain bg-cream-dark/20" />
+                      <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
                     </div>
                   </div>
                 </div>
