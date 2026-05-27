@@ -1,22 +1,137 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import servicesImage from '../assets/images/services-image.webp'
+import nurseryAfter from '../assets/images/nursery-after-1.webp'
+import nurseryBefore from '../assets/images/nursery-before-1.webp'
 
 const BOOKING_URL = 'https://calendar.app.google/9HjRBQhJGpE6YCzv5'
 
-export default function Services() {
+const educationSessions = [
+  {
+    title: 'Childbirth Preparation',
+    duration: '4 hours',
+    tagline: 'Your comprehensive guide to labour and birth',
+    topics: [
+      'Late pregnancy: physical changes, prelabour signs, and preparing your body',
+      'The three stages of labour: what to expect, hour by hour',
+      'Recognizing true labour and when to go to the hospital or birthing location',
+      'Vaginal birth process and what happens immediately after',
+      'Caesarean birth: indications, procedure, and what to expect',
+      'Creating flexible birth preferences that honour your values',
+      'Immediate postpartum: golden hour, skin-to-skin, and first moments with baby',
+    ],
+  },
+  {
+    title: 'Pain Management & Comfort Techniques',
+    duration: '3 hours',
+    tagline: 'Empowering tools for your labour',
+    topics: [
+      'Understanding pain in labour: physiology and mindset',
+      'Natural comfort measures: breathing patterns, visualization, and relaxation',
+      'Movement and positioning: using gravity and optimal fetal positioning',
+      'Hydrotherapy: shower and tub techniques for pain relief',
+      'Counterpressure, massage, and touch techniques',
+      'Medical pain management: nitrous oxide, IV medications, and epidurals',
+      'Creating your personalized comfort toolkit',
+      'When and how to change your pain-management plan',
+    ],
+  },
+  {
+    title: 'Medical Interventions & Informed Consent',
+    duration: '2 hours',
+    tagline: 'Navigating your options with confidence',
+    topics: [
+      'Labour induction: methods, reasons, and what to expect',
+      'Augmentation of labour: when and why it may be recommended',
+      'Continuous fetal monitoring vs. intermittent monitoring',
+      'Assisted delivery: vacuum and forceps use',
+      'Episiotomy and perineal tearing: prevention and management',
+      'Understanding medical terminology and asking the right questions',
+      'The BRAIN decision-making framework',
+      'Advocating for yourself and communicating with your care team',
+      'Processing interventions and staying empowered during unexpected changes',
+    ],
+  },
+  {
+    title: 'Postpartum Preparation & Newborn Essentials',
+    duration: '5 hours',
+    tagline: 'Ready for life with your new baby',
+    topics: [
+      'Physical postpartum recovery: healing, bleeding, and body changes',
+      'Postpartum warning signs and when to call your provider',
+      'Emotional adjustment and the "baby blues" vs. postpartum depression',
+      'Newborn appearance, behaviour, and what\'s normal in the first weeks',
+      'Safe sleep practices and SIDS prevention',
+      'Diapering, bathing, and basic newborn care',
+      'Feeding overview: breastfeeding and formula basics',
+      'Recognizing baby\'s cues and soothing techniques',
+      'Setting up your postpartum space and preparing practical support',
+    ],
+  },
+  {
+    title: 'Newborn Sleep Foundations',
+    duration: '1.5 hours',
+    tagline: 'Understanding and shaping healthy sleep',
+    topics: [
+      'Newborn sleep biology and realistic expectations',
+      'Safe sleep environment setup for every sleep space',
+      'Day and night confusion: establishing circadian rhythms',
+      'Age-appropriate wake windows and sleep amounts (0 to 6 months)',
+      'Creating calming bedtime routines',
+      'Understanding sleep cues and drowsy but awake',
+      'Common sleep challenges',
+      'Sleep safety away from home',
+    ],
+  },
+  {
+    title: 'Partner as Birth & Postpartum Support',
+    duration: '2 hours',
+    tagline: 'Your essential role in the journey',
+    topics: [
+      'Understanding your partner\'s physical and emotional experience',
+      'Active labour support: positioning, counterpressure, and encouragement',
+      'What to say (and not say) during labour',
+      'Supporting pain-management decisions and being an advocate',
+      'Your role during caesarean birth or medical interventions',
+      'Immediate postpartum: supporting healing and bonding',
+      'Practical postpartum help: what partners can do in the early weeks',
+      'Feeding support and overnight strategies',
+      'Protecting your partner\'s recovery and mental health',
+      'Intimacy, communication, and relationship care after baby',
+    ],
+  },
+  {
+    title: 'Grandparents & Caregivers Education',
+    duration: '2 hours',
+    tagline: 'Supporting the new family with current knowledge',
+    topics: [
+      'What\'s changed: updated feeding and care practices',
+      'Safe sleep guidelines: back to sleep, room sharing, and safe surfaces',
+      'Current recommendations vs. "how we did it back then"',
+      'Supporting breastfeeding and modern feeding practices',
+      'Soothing techniques and understanding newborn crying',
+      'Postpartum support: what new parents really need',
+      'Respecting parenting choices and boundaries',
+      'How to help without overstepping',
+      'Bonding with your grandchild while supporting parents\' lead',
+    ],
+  },
+]
 
-  const services = [
+export default function Services() {
+  const [openSession, setOpenSession] = useState(null)
+
+  const mainServices = [
     {
       type: 'Birth Doula',
-      tagline: 'Your guide through labor and delivery',
+      tagline: 'Your guide through labour and delivery',
       intro:
-        'Labor is unpredictable, and having continuous support can make all the difference. As your birth doula, I provide emotional, physical, and informational support before, during, and after delivery.',
+        'Labour is unpredictable. Having knowledgeable and continuous support can make all the difference. As your Birth Doula, I provide emotional, physical, and informational support before, during, and after delivery.',
       includes: [
-        'Two prenatal visits. We\'ll discuss your vision, create your birth plan and prepare you for what\'s ahead.',
-        '24 hour on-call availability as your due date approaches. Day or night, I\'m only a text or call away.',
-        'Continuous labor support from the moment I arrive until 1 hour after the baby is born. Comfort measures, positioning, breathing techniques, and a calm presence through every contraction.',
-        'One postpartum visit. We\'ll debrief your birth experience, discuss early feeding, and make sure you\'re adjusting well.',
+        'Two prenatal visits. We\'ll discuss your situation and preferences, and create a unique birth plan, so that you\'re prepared for what\'s ahead.',
+        '24 hour availability as your due date approaches. Day or night, I\'m only a text or call away.',
+        'Continuous labour support from the moment I arrive until an hour after the baby is born. Comfort measures, positioning, breathing techniques, and a calm, reassuring presence through every contraction.',
+        'One postpartum visit. We\'ll discuss your birth experience, early feeding, and any concerns, to ensure you\'re fully supported while adjusting to this huge and exciting change.',
       ],
       accent: 'coral',
     },
@@ -24,7 +139,7 @@ export default function Services() {
       type: 'Postpartum Doula',
       tagline: 'The fourth trimester matters',
       intro:
-        'The first weeks with a newborn are beautiful and exhausting. Sleepless nights, feeding challenges, creating a routine that works for everyone in the home. Postpartum support helps you recover, adjust, and bond with your baby without burning out.',
+        'Caring for a newborn is beautiful, but sleepless nights, feeding challenges, and creating a routine that works for everyone in the home can be exhausting. Postpartum support helps you rest, process, and reflect, so that you can bond with and nurture your baby while healing and recovering.',
       includes: [
         'In-home day and overnight support',
         'Newborn care guidance — Feeding support (breast or bottle), diapering, bathing, soothing techniques, and sleep strategies.',
@@ -50,130 +165,263 @@ export default function Services() {
           </h2>
         </motion.div>
 
-        {/* Image showcase */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="flex justify-center mb-16"
-        >
-          <div className="relative">
-            <div className="absolute -inset-4 rounded-full border-2 border-coral/20" />
-            <div className="absolute -inset-8 rounded-full border border-sage/10" />
-            <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl shadow-charcoal/10">
-              <img
-                src={servicesImage}
-                alt="Caring support for families"
-                className="w-full h-full object-cover opacity-90 saturate-[0.85]"
-              />
-            </div>
-          </div>
-        </motion.div>
+        <div className="space-y-8">
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.type}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group"
-            >
-              <div
-                className={`h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ${
-                  service.accent === 'coral'
-                    ? 'hover:shadow-coral/10'
-                    : 'hover:shadow-sage/10'
-                }`}
+          {/* 1. Education Sessions */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:shadow-coral/10">
+              <div className="px-8 pt-8 pb-6 bg-gradient-to-br from-coral/10 to-coral-light/5">
+                <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">
+                  Private Birth & Newborn Care Education Sessions
+                </h3>
+                <p className="font-medium text-coral">Knowledge that empowers you</p>
+              </div>
+
+              <div className="p-8">
+                <p className="text-charcoal-light leading-relaxed mb-6">
+                  Preparing for birth and caring for a newborn can feel overwhelming. These personalized, in-home sessions give you the practical knowledge and confidence you need — at your own pace, in your own space, with hands-on practice using your own baby gear. Choose the sessions that are most relevant to you.
+                </p>
+
+                <p className="text-charcoal font-medium mb-4">Choose the sessions that matter most to you:</p>
+
+                <div className="space-y-3 mb-8">
+                  {educationSessions.map((session, index) => (
+                    <div key={index} className="border border-cream-dark rounded-2xl overflow-hidden">
+                      <button
+                        onClick={() => setOpenSession(openSession === index ? null : index)}
+                        className="w-full px-6 py-4 flex items-center justify-between text-left bg-transparent border-none cursor-pointer group"
+                        aria-expanded={openSession === index}
+                      >
+                        <div className="flex items-center gap-4 pr-4">
+                          <span className="font-medium text-charcoal group-hover:text-coral transition-colors duration-200">
+                            {session.title}
+                          </span>
+                          <span className="text-sm text-charcoal-light bg-cream px-3 py-1 rounded-full flex-shrink-0">
+                            {session.duration}
+                          </span>
+                        </div>
+                        <span
+                          className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
+                            openSession === index
+                              ? 'bg-coral text-white rotate-180'
+                              : 'bg-cream-dark text-charcoal-light'
+                          }`}
+                        >
+                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </span>
+                      </button>
+
+                      <AnimatePresence>
+                        {openSession === index && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: 'easeInOut' }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-6 pb-5">
+                              <p className="text-sm text-coral font-medium mb-3 italic">{session.tagline}</p>
+                              <div className="space-y-2">
+                                {session.topics.map((topic, i) => (
+                                  <p key={i} className="text-charcoal-light text-sm leading-relaxed pl-4 border-l-2 border-cream-dark">
+                                    {topic}
+                                  </p>
+                                ))}
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-4 rounded-full font-medium transition-all duration-300 text-center no-underline bg-coral hover:bg-coral-dark text-white hover:shadow-lg hover:shadow-coral/25"
+                >
+                  Book a Free Consultation
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 2 & 3. Birth and Postpartum Doula */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
+            {mainServices.map((service, index) => (
+              <motion.div
+                key={service.type}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="group"
               >
-                {/* Header */}
                 <div
-                  className={`px-8 pt-8 pb-6 ${
+                  className={`h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ${
                     service.accent === 'coral'
-                      ? 'bg-gradient-to-br from-coral/10 to-coral-light/5'
-                      : 'bg-gradient-to-br from-sage/10 to-sage-light/5'
+                      ? 'hover:shadow-coral/10'
+                      : 'hover:shadow-sage/10'
                   }`}
                 >
-                  <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">
-                    {service.type}
-                  </h3>
-                  <p
-                    className={`font-medium ${
-                      service.accent === 'coral' ? 'text-coral' : 'text-sage'
+                  <div
+                    className={`px-8 pt-8 pb-6 ${
+                      service.accent === 'coral'
+                        ? 'bg-gradient-to-br from-coral/10 to-coral-light/5'
+                        : 'bg-gradient-to-br from-sage/10 to-sage-light/5'
                     }`}
                   >
-                    {service.tagline}
-                  </p>
-                </div>
-
-                {/* Content */}
-                <div className="p-8">
-                  <p className="text-charcoal-light leading-relaxed mb-6">
-                    {service.intro}
-                  </p>
-
-                  <p className="text-charcoal font-medium mb-4">What's Included:</p>
-
-                  <div className="space-y-3 mb-8">
-                    {service.includes.map((item, i) => (
-                      <p key={i} className="text-charcoal-light leading-relaxed pl-4 border-l-2 border-cream-dark">
-                        {item}
-                      </p>
-                    ))}
+                    <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">
+                      {service.type}
+                    </h3>
+                    <p className={`font-medium ${service.accent === 'coral' ? 'text-coral' : 'text-sage'}`}>
+                      {service.tagline}
+                    </p>
                   </div>
 
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block w-full py-4 rounded-full font-medium transition-all duration-300 text-center no-underline ${
-                      service.accent === 'coral'
-                        ? 'bg-coral hover:bg-coral-dark text-white hover:shadow-lg hover:shadow-coral/25'
-                        : 'bg-sage hover:bg-sage-dark text-white hover:shadow-lg hover:shadow-sage/25'
-                    }`}
-                  >
-                    Book a Free Consultation
-                  </a>
+                  <div className="p-8">
+                    <p className="text-charcoal-light leading-relaxed mb-6">{service.intro}</p>
+                    <p className="text-charcoal font-medium mb-4">What's Included:</p>
+                    <div className="space-y-3 mb-8">
+                      {service.includes.map((item, i) => (
+                        <p key={i} className="text-charcoal-light leading-relaxed pl-4 border-l-2 border-cream-dark">
+                          {item}
+                        </p>
+                      ))}
+                    </div>
+                    <a
+                      href={BOOKING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`block w-full py-4 rounded-full font-medium transition-all duration-300 text-center no-underline ${
+                        service.accent === 'coral'
+                          ? 'bg-coral hover:bg-coral-dark text-white hover:shadow-lg hover:shadow-coral/25'
+                          : 'bg-sage hover:bg-sage-dark text-white hover:shadow-lg hover:shadow-sage/25'
+                      }`}
+                    >
+                      Book a Free Consultation
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Gift Certificate Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10"
-        >
-          <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-            <div className="px-8 pt-8 pb-6 bg-gradient-to-br from-coral/5 to-sage/5">
-              <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">
-                Gift Certificate
-              </h3>
-              <p className="font-medium text-charcoal-light">
-                A thoughtful gift for new and growing families
-              </p>
-            </div>
-
-            <div className="p-8">
-              <p className="text-charcoal-light leading-relaxed mb-8">
-                Celebrate new beginnings with a gift certificate for birth and postpartum support services. Perfect for friends and family who want to offer meaningful help during this transformative time. Gift certificates can be used towards any of our personalized care packages, ensuring the recipient receives exactly the support they need.
-              </p>
-
-              <Link
-                to="/gift-certificate"
-                className="inline-block w-full sm:w-auto px-8 py-4 rounded-full font-medium transition-all duration-300 bg-charcoal hover:bg-charcoal-light text-white hover:shadow-lg text-center no-underline"
-              >
-                Request a Gift Certificate
-              </Link>
-            </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+
+          {/* 4. Nursery Setup, Curation & Organisation */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:shadow-sage/10">
+              <div className="px-8 pt-8 pb-6 bg-gradient-to-br from-sage/10 to-sage-light/5">
+                <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">
+                  Nursery Setup, Curation & Organisation
+                </h3>
+                <p className="font-medium text-sage">Your nursery, ready before you are.</p>
+              </div>
+
+              <div className="p-8">
+                <p className="text-charcoal-light leading-relaxed mb-6">
+                  The gifts are piled up. The drawers are overflowing. You're exhausted and the baby isn't even here yet. This fully hands-on, in-home service transforms your nursery into a calm, functional space — every item sorted, stored, and within reach — before you bring your baby home.
+                </p>
+
+                <p className="text-charcoal font-medium mb-4">What's Included:</p>
+                <div className="space-y-3 mb-8">
+                  {[
+                    'A complete sort and setup of your nursery — closet, dresser, changing station, and storage areas',
+                    'A customized organization system built around how you\'ll actually use the space',
+                    'Essential supplies included: vacuum seal bags, closet organizers, dresser dividers, and labels',
+                    'Every item categorized — immediate use, upcoming needs, and long-term storage — so nothing gets lost',
+                    'A simple maintenance plan so the system holds long after we\'re done',
+                  ].map((item, i) => (
+                    <p key={i} className="text-charcoal-light leading-relaxed pl-4 border-l-2 border-cream-dark">
+                      {item}
+                    </p>
+                  ))}
+                </div>
+
+                <p className="text-sm text-charcoal-light mb-8 italic">
+                  Most nurseries take 4–6 hours. Larger rooms or bathroom organization may extend the timeline. Investment is confirmed after a brief consultation. Client provides all furniture and laundry baskets; additional supplies beyond the included basics are billed separately.
+                </p>
+
+                {/* Before / After Photos */}
+                <div className="mb-8">
+                  <p className="text-charcoal font-medium mb-4">Before & After:</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="relative">
+                      <img
+                        src={nurseryBefore}
+                        alt="Nursery before organization"
+                        className="w-full h-48 sm:h-64 object-cover rounded-2xl opacity-90 saturate-[0.85]"
+                      />
+                      <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">
+                        Before
+                      </span>
+                    </div>
+                    <div className="relative">
+                      <img
+                        src={nurseryAfter}
+                        alt="Nursery after organization"
+                        className="w-full h-48 sm:h-64 object-cover rounded-2xl opacity-90 saturate-[0.85]"
+                      />
+                      <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">
+                        After
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-4 rounded-full font-medium transition-all duration-300 text-center no-underline bg-sage hover:bg-sage-dark text-white hover:shadow-lg hover:shadow-sage/25"
+                >
+                  Book a Free Consultation
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 5. Gift Certificate */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+              <div className="px-8 pt-8 pb-6 bg-gradient-to-br from-coral/5 to-sage/5">
+                <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">Gift Certificate</h3>
+                <p className="font-medium text-charcoal-light">A thoughtful gift for new and growing families</p>
+              </div>
+              <div className="p-8">
+                <p className="text-charcoal-light leading-relaxed mb-8">
+                  Celebrate new beginnings with a gift certificate for birth and postpartum support services. Perfect for friends and family who want to offer meaningful help during this transformative time. Gift certificates can be used towards any personalized care package, ensuring the recipient receives exactly the support they need.
+                </p>
+                <Link
+                  to="/gift-certificate"
+                  className="inline-block w-full sm:w-auto px-8 py-4 rounded-full font-medium transition-all duration-300 bg-charcoal hover:bg-charcoal-light text-white hover:shadow-lg text-center no-underline"
+                >
+                  Request a Gift Certificate
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   )
