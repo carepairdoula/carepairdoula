@@ -342,7 +342,7 @@ export default function Services() {
                 </div>
 
                 <p className="text-charcoal font-medium mb-3">Before & After:</p>
-                <div className="grid grid-cols-2 gap-3 mb-3">
+                <div className="grid grid-cols-2 gap-3 mb-8">
                   <div className="relative">
                     <img src="/nursery-before-1.webp" alt="Nursery before" className="w-full rounded-2xl object-cover" />
                     <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
@@ -351,14 +351,20 @@ export default function Services() {
                     <img src="/nursery-after-1.webp" alt="Nursery after" className="w-full rounded-2xl object-cover" />
                     <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
                   </div>
-                </div>
-                <div className="grid grid-cols-2 gap-3 mb-8">
                   <div className="relative">
-                    <img src="/nursery-before-2.webp" alt="Nursery before detail" className="w-full rounded-2xl object-cover" />
+                    <img src="/nursery-before-2.webp" alt="Nursery before" className="w-full rounded-2xl object-cover" />
                     <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
                   </div>
                   <div className="relative">
-                    <img src="/nursery-after-2.webp" alt="Nursery after detail" className="w-full rounded-2xl object-cover" />
+                    <img src="/nursery-after-2.webp" alt="Nursery after" className="w-full rounded-2xl object-cover" />
+                    <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
+                  </div>
+                  <div className="relative">
+                    <img src="/nursery-before-3.webp" alt="Nursery before" className="w-full rounded-2xl object-cover" />
+                    <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
+                  </div>
+                  <div className="relative">
+                    <img src="/nursery-after-3.webp" alt="Nursery after" className="w-full rounded-2xl object-cover" />
                     <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
                   </div>
                 </div>
