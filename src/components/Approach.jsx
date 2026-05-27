@@ -3,21 +3,21 @@ import { motion } from 'framer-motion'
 export default function Approach() {
   const philosophyPoints = [
     {
-      title: 'Judgment-free choices',
+      title: 'Judgment-free',
       description:
-        'Do you want to birth at home with a midwife? Great. Do you want an epidural the moment you walk into the hospital? Also great. I\'m here to support your choices, not steer them.',
+        'Do you want to give birth at home with a midwife, or do you want an epidural the minute you get to the hospital? I\'m here to support and affirm your choices, not to influence them.',
       accent: 'coral',
     },
     {
       title: 'Continuous presence',
       description:
-        'Unlike your medical team who works in shifts, I stay with you. One consistent calm presence during your entire experience.',
+        'Unlike your medical team, who works in shifts, I stay with you, providing a familiar, continuous, supportive presence.',
       accent: 'sage',
     },
     {
       title: 'Evidence-based, always',
       description:
-        'I help you understand your options using current, evidence-based information. No fear tactics. No guilt. Just clear information so you can decide what\'s best for your family.',
+        'I help you understand your options using current, evidence-based information, not anecdotes or fear tactics.',
       accent: 'coral',
     },
   ]
@@ -41,11 +41,11 @@ export default function Approach() {
           </h2>
 
           <p className="text-lg text-charcoal-light max-w-2xl mx-auto leading-relaxed">
-            Every family is different. Every pregnancy is different. That's why we customize support to meet your needs.
+            Every pregnancy is different. Every family is different. That's why customized support is so important.
           </p>
 
           <p className="text-lg text-charcoal-light max-w-2xl mx-auto leading-relaxed mt-4">
-            I'm not here to push a certain philosophy; I'm here to help you figure out what feels right for you.
+            If you're unsure, I can help you figure out what feels right for you.
           </p>
         </motion.div>
 
