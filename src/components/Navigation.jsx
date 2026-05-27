@@ -6,7 +6,7 @@ import logo from '../assets/images/logo.svg'
 const BOOKING_URL = 'https://calendar.app.google/9HjRBQhJGpE6YCzv5'
 
 const serviceItems = [
-  { label: 'Private Birth & Newborn Care Education', id: 'education-sessions' },
+  { label: 'Prenatal Education — Birth & Newborn Care', id: 'education-sessions' },
   { label: 'Birth Doula', id: 'birth-doula' },
   { label: 'Postpartum Doula', id: 'postpartum-doula' },
   { label: 'Nursery Setup, Curation & Organisation', id: 'nursery-service' },
