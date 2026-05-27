@@ -34,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
               className="text-lg sm:text-xl text-charcoal-light leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Birth is a beautiful and transformative journey. From preparing for labor to embracing the early days of parenthood, having dedicated support by your side can make all the difference. You deserve someone who is fully present and attentive to your unique experience.
+              Birth is transformative. Pregnancy, labour, and early parenthood are often intense and challenging experiences. Having customized and dedicated support as you bring your baby into the world, and adjust to this exciting change, can make all the difference. You deserve someone who is fully present and attentive to your unique situation.
             </motion.p>
 
             <motion.div
