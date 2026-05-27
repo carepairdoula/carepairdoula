@@ -33,15 +33,15 @@ export default function WhatIsDoula() {
           >
             <div className="space-y-5 text-charcoal-light text-lg leading-relaxed">
               <p>
-                As your Birth Doula, I'm with you before, during, and after your baby arrives. I learn what matters to you, what scares you, and what you're hoping for. I help you advocate for yourself, and stay grounded; even when things don't go as planned.
+                As your Birth Doula, I learn your priorities, fears, and hopes. I help you advocate for yourself and remain focussed and grounded, even if things don't go as planned. I'm with you before, during, and after your baby's arrival.
               </p>
 
               <p>
-                Whether you're planning a home birth, a hospital birth with every intervention available, or you're still figuring it out, my job is to support your choices. Not judge them.
+                Whether you want a home birth, a hospital birth, or are still figuring out your birth plan, my job is to support your choices, not judge them.
               </p>
 
               <p>
-                I work with your medical team while filling in the gaps: emotional support, physical comfort, informed guidance, and a calm presence when you need it most.
+                I work with your medical team, filling in the gaps and providing emotional support, physical comfort, informed guidance, and a calm, encouraging presence.
               </p>
             </div>
           </motion.div>
@@ -77,15 +77,11 @@ export default function WhatIsDoula() {
         >
           <div className="max-w-3xl space-y-5 text-charcoal-light text-lg leading-relaxed">
             <p>
-              As your Postpartum Doula, I'm there with you after your baby is born, helping you adjust to this new phase of life. I take the time to understand what you need most and how I can best support you.
+              As your Postpartum Doula, I'm with you after your baby is born, helping you adjust to this new phase of life. I learn your needs, priorities, and concerns, so that I can best support you and your family.
             </p>
 
             <p>
-              No matter how you're feeling, whether it's joy, exhaustion, or uncertainty; I support your choices and honor your experience. I'm here to offer guidance and hands-on help so you can feel more empowered during this special (sometimes overwhelming) time.
-            </p>
-
-            <p className="text-charcoal font-medium">
-              My goal is to provide a calm, nurturing presence that helps you feel less alone and more confident.
+              Whether you're feeling joyful and blissful, uncertain, or exhausted and depressed, I honour your experience. I offer hands-on help, informed guidance, and a nurturing presence, so that you can feel more confident and empowered during this special, but sometimes overwhelming, time.
             </p>
           </div>
         </motion.div>
