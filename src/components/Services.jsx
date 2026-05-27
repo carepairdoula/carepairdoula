@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import nurseryAfter1 from '../assets/images/nursery-after-1.webp'
-import nurseryAfter2 from '../assets/images/nursery-after-2.webp'
-import nurseryAfter3 from '../assets/images/nursery-after-3.webp'
-import nurseryBefore1 from '../assets/images/nursery-before-1.webp'
-import nurseryBefore2 from '../assets/images/nursery-before-2.webp'
+
+
+
+
+
 
 const BOOKING_URL = 'https://calendar.app.google/9HjRBQhJGpE6YCzv5'
 
@@ -341,32 +341,25 @@ export default function Services() {
                   ))}
                 </div>
 
-                {/* Before & After Photos — 2 column grid */}
-                <div className="mb-8">
-                  <p className="text-charcoal font-medium mb-3">Before & After:</p>
-                  <div className="grid grid-cols-2 gap-3 mb-3">
-                    <div className="relative">
-                      <img src={nurseryBefore1} alt="Nursery before" className="w-full rounded-2xl object-contain bg-cream-dark/20" />
-                      <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
-                    </div>
-                    <div className="relative">
-                      <img src={nurseryAfter1} alt="Nursery after" className="w-full rounded-2xl object-contain bg-cream-dark/20" />
-                      <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
-                    </div>
+                <p className="text-charcoal font-medium mb-3">Before & After:</p>
+                <div className="grid grid-cols-2 gap-3 mb-3">
+                  <div className="relative">
+                    <img src="/nursery-before-1.webp" alt="Nursery before" className="w-full rounded-2xl object-cover" />
+                    <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
                   </div>
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="relative">
-                      <img src={nurseryBefore2} alt="Nursery before detail" className="w-full rounded-2xl object-contain bg-cream-dark/20" />
-                      <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
-                    </div>
-                    <div className="relative">
-                      <img src={nurseryAfter2} alt="Nursery after detail" className="w-full rounded-2xl object-contain bg-cream-dark/20" />
-                      <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
-                    </div>
-                    <div className="relative">
-                      <img src={nurseryAfter3} alt="Nursery after overview" className="w-full rounded-2xl object-contain bg-cream-dark/20" />
-                      <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
-                    </div>
+                  <div className="relative">
+                    <img src="/nursery-after-1.webp" alt="Nursery after" className="w-full rounded-2xl object-cover" />
+                    <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 mb-8">
+                  <div className="relative">
+                    <img src="/nursery-before-2.webp" alt="Nursery before detail" className="w-full rounded-2xl object-cover" />
+                    <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
+                  </div>
+                  <div className="relative">
+                    <img src="/nursery-after-2.webp" alt="Nursery after detail" className="w-full rounded-2xl object-cover" />
+                    <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
                   </div>
                 </div>
 
