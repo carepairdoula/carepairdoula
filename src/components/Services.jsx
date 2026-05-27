@@ -344,27 +344,27 @@ export default function Services() {
                 <p className="text-charcoal font-medium mb-3">Before & After:</p>
                 <div className="grid grid-cols-2 gap-3 mb-8">
                   <div className="relative">
-                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-1.webp" alt="Nursery before" className="w-full rounded-2xl object-cover" />
+                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-1.jpg" alt="Nursery before" className="w-full rounded-2xl object-cover" />
                     <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
                   </div>
                   <div className="relative">
-                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-1.webp" alt="Nursery after" className="w-full rounded-2xl object-cover" />
+                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-1.jpg" alt="Nursery after" className="w-full rounded-2xl object-cover" />
                     <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
                   </div>
                   <div className="relative">
-                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-2.webp" alt="Nursery before" className="w-full rounded-2xl object-cover" />
+                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-2.jpg" alt="Nursery before" className="w-full rounded-2xl object-cover" />
                     <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
                   </div>
                   <div className="relative">
-                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-2.webp" alt="Nursery after" className="w-full rounded-2xl object-cover" />
+                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-2.jpg" alt="Nursery after" className="w-full rounded-2xl object-cover" />
                     <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
                   </div>
                   <div className="relative">
-                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-3.webp" alt="Nursery before" className="w-full rounded-2xl object-cover" />
+                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-3.jpg" alt="Nursery before" className="w-full rounded-2xl object-cover" />
                     <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
                   </div>
                   <div className="relative">
-                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-3.webp" alt="Nursery after" className="w-full rounded-2xl object-cover" />
+                    <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-3.jpg" alt="Nursery after" className="w-full rounded-2xl object-cover" />
                     <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
                   </div>
                 </div>
