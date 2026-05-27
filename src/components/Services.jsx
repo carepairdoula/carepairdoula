@@ -12,7 +12,7 @@ const BOOKING_URL = 'https://calendar.app.google/9HjRBQhJGpE6YCzv5'
 const educationSessions = [
   {
     title: 'Childbirth Preparation',
-    duration: '4 hours',
+    duration: '6 hours',
     tagline: 'Your comprehensive guide to labour and birth',
     topics: [
       'Late pregnancy: physical changes, prelabour signs, and preparing your body',
@@ -22,42 +22,13 @@ const educationSessions = [
       'Caesarean birth: indications, procedure, and what to expect',
       'Creating flexible birth preferences that honour your values',
       'Immediate postpartum: golden hour, skin-to-skin, and first moments with baby',
+      'Pain management: natural comfort measures, breathing, movement, positioning, and medical options including epidurals',
+      'Medical interventions and informed consent: understanding your options, the BRAIN framework, and how to advocate for yourself',
     ],
   },
   {
-    title: 'Pain Management & Comfort Techniques',
-    duration: '3 hours',
-    tagline: 'Empowering tools for your labour',
-    topics: [
-      'Understanding pain in labour: physiology and mindset',
-      'Natural comfort measures: breathing patterns, visualization, and relaxation',
-      'Movement and positioning: using gravity and optimal fetal positioning',
-      'Hydrotherapy: shower and tub techniques for pain relief',
-      'Counterpressure, massage, and touch techniques',
-      'Medical pain management: nitrous oxide, IV medications, and epidurals',
-      'Creating your personalized comfort toolkit',
-      'When and how to change your pain management plan',
-    ],
-  },
-  {
-    title: 'Medical Interventions & Informed Consent',
-    duration: '2 hours',
-    tagline: 'Navigating your options with confidence',
-    topics: [
-      'Labour induction: methods, reasons, and what to expect',
-      'Augmentation of labour: when and why it may be recommended',
-      'Continuous fetal monitoring vs. intermittent monitoring',
-      'Assisted delivery: vacuum and forceps use',
-      'Episiotomy and perineal tearing: prevention and management',
-      'Understanding medical terminology and asking the right questions',
-      'The BRAIN decision-making framework',
-      'Advocating for yourself and communicating with your care team',
-      'Processing interventions and staying empowered during unexpected changes',
-    ],
-  },
-  {
-    title: 'Postpartum Preparation & Newborn Essentials',
-    duration: '5 hours',
+    title: 'Newborn Care & Postpartum Prep',
+    duration: '6 hours',
     tagline: 'Ready for life with your new baby',
     topics: [
       'Physical postpartum recovery: healing, bleeding, and body changes',
@@ -69,21 +40,6 @@ const educationSessions = [
       'Feeding overview: breastfeeding and formula basics',
       'Recognizing baby\'s cues and soothing techniques',
       'Setting up your postpartum space and preparing practical support',
-    ],
-  },
-  {
-    title: 'Newborn Sleep Foundations',
-    duration: '1.5 hours',
-    tagline: 'Understanding and shaping healthy sleep',
-    topics: [
-      'Newborn sleep biology and realistic expectations',
-      'Safe sleep environment setup for every sleep space',
-      'Day and night confusion: establishing circadian rhythms',
-      'Age-appropriate wake windows and sleep amounts (0 to 6 months)',
-      'Creating calming bedtime routines',
-      'Understanding sleep cues and drowsy but awake',
-      'Common sleep challenges',
-      'Sleep safety away from home',
     ],
   },
   {
@@ -180,7 +136,7 @@ export default function Services() {
             <div id="education-sessions" className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:shadow-coral/10">
               <div className="px-8 pt-8 pb-6 bg-gradient-to-br from-coral/10 to-coral-light/5">
                 <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">
-                  Private Birth & Newborn Care Education Sessions
+                  Prenatal Education — Birth & Newborn Care
                 </h3>
                 <p className="font-medium text-coral">Knowledge that empowers you</p>
               </div>
