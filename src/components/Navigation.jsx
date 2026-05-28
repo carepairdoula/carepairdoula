@@ -68,7 +68,7 @@ export default function Navigation() {
             <img
               src={logo}
               alt="Carepair - Customized Support For Birth & Beyond"
-              className="h-20 sm:h-24 w-auto brightness-0 opacity-80"
+              className="h-32 sm:h-40 w-auto brightness-0"
             />
           </button>
 
