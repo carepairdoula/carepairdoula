@@ -145,11 +145,8 @@ export default function Services() {
                 <p className="text-charcoal-light leading-relaxed mb-3">
                   Hospital classes cover the basics. These sessions go deeper. Held in the comfort of your own home, each session is tailored to your questions, your concerns, and your specific situation — not a room full of strangers.
                 </p>
-                <p className="text-charcoal-light leading-relaxed mb-3">
-                  You get my full attention, honest answers, and information you can actually use. Your partner learns how to be genuinely helpful, not just present. Sensitive topics get the privacy they deserve. And because we use your own baby gear, there's no guesswork about how things work once I leave.
-                </p>
                 <p className="text-charcoal-light leading-relaxed mb-6">
-                  Sessions are available individually or in any combination. Each one is paced to how you learn, not to a fixed schedule.
+                  You get my full attention, honest answers, and information you can actually use. Your partner learns how to be genuinely helpful, not just present. Sensitive topics get the privacy they deserve.
                 </p>
 
                 <div className="space-y-2 mb-8">
