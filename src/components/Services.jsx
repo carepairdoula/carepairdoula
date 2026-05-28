@@ -273,10 +273,10 @@ export default function Services() {
 
               <div className="p-8">
                 <p className="text-charcoal-light leading-relaxed mb-3">
-                  Baby gifts pile up fast. Clothes come in every size. Gear arrives in boxes. Before long, the nursery is overwhelming — and finding what you need at 3am shouldn't require a search.
+                  Baby gifts pile up fast. Clothes come in every size. Gear arrives faster than you can open it. Before long, the nursery is overwhelming, and you can't find what you need at 3am.
                 </p>
                 <p className="text-charcoal-light leading-relaxed mb-4">
-                  This fully hands-on, in-home service transforms your nursery into a space that works — beautifully and practically. Every item sorted, stored, and within reach. A system that makes sense and actually holds.
+                  This fully hands-on service transforms your nursery into an efficient, logical space. Don't waste money buying things you forgot you had. Every item is sorted, stored, and within reach. A system that makes sense now and as your baby grows. Give yourself the gift of a beautiful, picture-perfect nursery.
                 </p>
 
                 <p className="text-charcoal font-medium mb-3">What's Included:</p>
