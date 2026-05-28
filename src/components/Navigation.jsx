@@ -9,7 +9,7 @@ const serviceItems = [
   { label: 'Prenatal Education — Birth & Newborn Care', id: 'education-sessions' },
   { label: 'Birth Doula', id: 'birth-doula' },
   { label: 'Postpartum Doula', id: 'postpartum-doula' },
-  { label: 'Nursery Setup, Curation & Organisation', id: 'nursery-service' },
+  { label: 'Nursery Curation & Organisation', id: 'nursery-service' },
   { label: 'Gift Certificate', href: '/gift-certificate' },
 ]
 
