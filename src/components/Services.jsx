@@ -21,9 +21,9 @@ const educationSessions = [
       'Vaginal birth process and what happens immediately after',
       'Caesarean birth process and what to expect',
       'Creating flexible birth preferences that honour your values',
-      'Immediate postpartum: golden hour, skin-to-skin, and first moments with baby',
       'Pain management: natural comfort measures, breathing, movement, positioning, and medical options including epidurals',
       'Medical interventions and informed consent: understanding your options, the BRAIN framework, and how to advocate for yourself',
+      'Immediate postpartum: golden hour, skin-to-skin, and first moments with baby',
     ],
   },
   {
@@ -157,9 +157,10 @@ export default function Services() {
                     'Hands-On Practice: Practice with your own baby gear or ours.',
                     'Confidential Space: Discuss sensitive topics privately.',
                   ].map((item, i) => (
-                    <p key={i} className="text-charcoal-light leading-relaxed pl-4 border-l-2 border-cream-dark">
-                      {item}
-                    </p>
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="mt-2 w-2 h-2 rounded-full bg-coral flex-shrink-0" />
+                      <p className="text-charcoal-light leading-relaxed">{item}</p>
+                    </div>
                   ))}
                 </div>
 
@@ -309,25 +310,26 @@ export default function Services() {
                 </div>
 
                 <p className="text-charcoal font-medium mb-3">Before & After:</p>
-                <div className="space-y-2 mb-6">
-                  <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-4 mb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-1.jpg" alt="Nursery before" className="w-full rounded-2xl object-cover" />
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-1.jpg" alt="Nursery after" className="w-full rounded-2xl object-cover" />
                   </div>
-                  <div className="grid grid-cols-2 gap-3 pt-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-2.jpg" alt="Nursery before" className="w-full rounded-2xl object-cover" />
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-2.jpg" alt="Nursery after" className="w-full rounded-2xl object-cover" />
                   </div>
-                  <div className="grid grid-cols-2 gap-3 pt-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-3.jpg" alt="Nursery before" className="w-full rounded-2xl object-cover" />
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-3.jpg" alt="Nursery after" className="w-full rounded-2xl object-cover" />
                   </div>
                 </div>
 
-                <div className="bg-cream rounded-2xl p-6 mb-8">
-                  <div className="text-coral/20 text-5xl font-serif leading-none mb-2">"</div>
+                <div className="bg-cream rounded-2xl p-6 mb-8 relative">
+                  <div className="absolute top-6 right-6 text-coral/20 text-5xl font-serif leading-none">"</div>
+                  <blockquote className="relative">
                   <p className="text-charcoal-light leading-relaxed italic mb-4">
-                    As a new mom, there are already so many things to think about, and having Mimi organize our nursery ended up being one of the most helpful decisions we made. I had piles of baby shower gifts and items sitting in the room, and between pregnancy and postpartum exhaustion, I couldn't muster the energy to tackle it myself. What felt overwhelming to me, Mimi completely transformed. She organized everything thoughtfully, packed away items I wouldn't need right away into vacuum-sealed bags, and created a space that was not only beautiful, but practical for everyday life. During those exhausting postpartum days and middle-of-the-night moments, I knew exactly where everything was. She thought of details and systems I would never have considered on my own, and it gave me such peace of mind. She even provided a maintenance plan afterward so I could actually keep everything organized long-term. If you're a tired new mom wondering if it's worth it — it absolutely is.
+                    "As a new mom, there are already so many things to think about, and having Mimi organize our nursery ended up being one of the most helpful decisions we made. I had piles of baby shower gifts and items sitting in the room, and between pregnancy and postpartum exhaustion, I couldn't muster the energy to tackle it myself. What felt overwhelming to me, Mimi completely transformed. She organized everything thoughtfully, packed away items I wouldn't need right away into vacuum-sealed bags, and created a space that was not only beautiful, but practical for everyday life. During those exhausting postpartum days and middle-of-the-night moments, I knew exactly where everything was. She thought of details and systems I would never have considered on my own, and it gave me such peace of mind. She even provided a maintenance plan afterward so I could actually keep everything organized long-term. If you're a tired new mom wondering if it's worth it — it absolutely is."
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-coral-light/30 to-sage-light/30 flex items-center justify-center">
@@ -338,6 +340,7 @@ export default function Services() {
                       <p className="text-xs text-charcoal-light">Nursery Curation & Organization</p>
                     </div>
                   </div>
+                  </blockquote>
                 </div>
 
                 <a
