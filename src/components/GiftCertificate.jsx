@@ -239,7 +239,7 @@ export default function GiftCertificate() {
                 {/* Amount */}
                 <div>
                   <label htmlFor="amount" className="block text-sm font-medium text-charcoal mb-1.5">
-                    Gift Certificate Amount <span className="text-charcoal-light font-normal">(optional)</span>
+                    Gift Certificate Amount
                   </label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-charcoal-light">$</span>
