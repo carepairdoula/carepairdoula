@@ -11,7 +11,7 @@ export default function GiftCertificate() {
     recipientName: '',
     recipientEmail: '',
     recipientDueDate: '',
-    serviceType: [],
+    amount: '',
     message: '',
     additionalInfo: '',
   })
@@ -19,17 +19,8 @@ export default function GiftCertificate() {
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target
-    if (type === 'checkbox') {
-      setFormData((prev) => ({
-        ...prev,
-        serviceType: checked
-          ? [...prev.serviceType, value]
-          : prev.serviceType.filter((item) => item !== value),
-      }))
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }))
-    }
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
   const handleSubmit = async (e) => {
@@ -44,7 +35,6 @@ export default function GiftCertificate() {
         },
         body: JSON.stringify({
           ...formData,
-          serviceType: formData.serviceType.join(', '),
           formType: 'Gift Certificate Request',
         }),
       })
@@ -58,7 +48,7 @@ export default function GiftCertificate() {
           recipientName: '',
           recipientEmail: '',
           recipientDueDate: '',
-          serviceType: [],
+          amount: '',
           message: '',
           additionalInfo: '',
         })
@@ -69,13 +59,6 @@ export default function GiftCertificate() {
       setIsSubmitting(false)
     }
   }
-
-  const serviceOptions = [
-    { value: 'birth', label: 'Birth Doula' },
-    { value: 'postpartum', label: 'Postpartum Doula' },
-    { value: 'both', label: 'Both' },
-    { value: 'let-them-choose', label: 'Let recipient choose' },
-  ]
 
   return (
     <div className="min-h-screen bg-cream">
@@ -130,44 +113,27 @@ export default function GiftCertificate() {
                 className="text-center py-8"
               >
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-sage/10 flex items-center justify-center">
-                  <svg
-                    className="w-8 h-8 text-sage"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
+                  <svg className="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h2 className="font-serif text-2xl text-charcoal mb-2">
-                  Request Received!
-                </h2>
+                <h2 className="font-serif text-2xl text-charcoal mb-2">Request Received!</h2>
                 <p className="text-charcoal-light mb-6">
                   Thank you for your gift certificate request. I'll be in touch within 24-48 hours with details.
                 </p>
-                <Link
-                  to="/"
-                  className="inline-flex items-center gap-2 text-coral hover:text-coral-dark transition-colors"
-                >
+                <Link to="/" className="inline-flex items-center gap-2 text-coral hover:text-coral-dark transition-colors">
                   ← Return to Home
                 </Link>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+
                 {/* Purchaser Info */}
                 <div>
                   <h3 className="font-serif text-xl text-charcoal mb-4">Your Information</h3>
                   <div className="space-y-4">
                     <div>
-                      <label
-                        htmlFor="purchaserName"
-                        className="block text-sm font-medium text-charcoal mb-1.5"
-                      >
+                      <label htmlFor="purchaserName" className="block text-sm font-medium text-charcoal mb-1.5">
                         Your Name <span className="text-coral">*</span>
                       </label>
                       <input
@@ -181,13 +147,9 @@ export default function GiftCertificate() {
                         placeholder="Your name"
                       />
                     </div>
-
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label
-                          htmlFor="purchaserEmail"
-                          className="block text-sm font-medium text-charcoal mb-1.5"
-                        >
+                        <label htmlFor="purchaserEmail" className="block text-sm font-medium text-charcoal mb-1.5">
                           Your Email <span className="text-coral">*</span>
                         </label>
                         <input
@@ -201,12 +163,8 @@ export default function GiftCertificate() {
                           placeholder="your@email.com"
                         />
                       </div>
-
                       <div>
-                        <label
-                          htmlFor="purchaserPhone"
-                          className="block text-sm font-medium text-charcoal mb-1.5"
-                        >
+                        <label htmlFor="purchaserPhone" className="block text-sm font-medium text-charcoal mb-1.5">
                           Your Phone
                         </label>
                         <input
@@ -223,7 +181,6 @@ export default function GiftCertificate() {
                   </div>
                 </div>
 
-                {/* Divider */}
                 <div className="border-t border-cream-dark" />
 
                 {/* Recipient Info */}
@@ -232,10 +189,7 @@ export default function GiftCertificate() {
                   <div className="space-y-4">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label
-                          htmlFor="recipientName"
-                          className="block text-sm font-medium text-charcoal mb-1.5"
-                        >
+                        <label htmlFor="recipientName" className="block text-sm font-medium text-charcoal mb-1.5">
                           Recipient's Name <span className="text-coral">*</span>
                         </label>
                         <input
@@ -249,12 +203,8 @@ export default function GiftCertificate() {
                           placeholder="Recipient's name"
                         />
                       </div>
-
                       <div>
-                        <label
-                          htmlFor="recipientEmail"
-                          className="block text-sm font-medium text-charcoal mb-1.5"
-                        >
+                        <label htmlFor="recipientEmail" className="block text-sm font-medium text-charcoal mb-1.5">
                           Recipient's Email
                         </label>
                         <input
@@ -268,12 +218,8 @@ export default function GiftCertificate() {
                         />
                       </div>
                     </div>
-
                     <div>
-                      <label
-                        htmlFor="recipientDueDate"
-                        className="block text-sm font-medium text-charcoal mb-1.5"
-                      >
+                      <label htmlFor="recipientDueDate" className="block text-sm font-medium text-charcoal mb-1.5">
                         Recipient's Due Date <span className="text-charcoal-light font-normal">(if known)</span>
                       </label>
                       <input
@@ -288,42 +234,34 @@ export default function GiftCertificate() {
                   </div>
                 </div>
 
-                {/* Divider */}
                 <div className="border-t border-cream-dark" />
 
-                {/* Service Selection */}
+                {/* Amount */}
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-3">
-                    What type of support would you like to gift?
+                  <label htmlFor="amount" className="block text-sm font-medium text-charcoal mb-1.5">
+                    Gift Certificate Amount <span className="text-charcoal-light font-normal">(optional)</span>
                   </label>
-                  <div className="grid grid-cols-2 gap-3">
-                    {serviceOptions.map((option) => (
-                      <label
-                        key={option.value}
-                        className="flex items-center gap-2 cursor-pointer"
-                      >
-                        <input
-                          type="checkbox"
-                          name="serviceType"
-                          value={option.value}
-                          checked={formData.serviceType.includes(option.value)}
-                          onChange={handleChange}
-                          className="w-4 h-4 rounded border-cream-dark text-coral focus:ring-coral/20"
-                        />
-                        <span className="text-charcoal-light text-sm">
-                          {option.label}
-                        </span>
-                      </label>
-                    ))}
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-charcoal-light">$</span>
+                    <input
+                      type="number"
+                      id="amount"
+                      name="amount"
+                      min="1"
+                      step="1"
+                      value={formData.amount}
+                      onChange={handleChange}
+                      className="w-full pl-8 pr-4 py-3 rounded-xl border border-cream-dark bg-cream/30 text-charcoal placeholder-charcoal-light/50 focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all duration-200 outline-none"
+                      placeholder="0"
+                    />
                   </div>
                 </div>
 
+                <div className="border-t border-cream-dark" />
+
                 {/* Personal Message */}
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-charcoal mb-1.5"
-                  >
+                  <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-1.5">
                     Personal message to include with gift certificate
                   </label>
                   <textarea
@@ -339,10 +277,7 @@ export default function GiftCertificate() {
 
                 {/* Additional Info */}
                 <div>
-                  <label
-                    htmlFor="additionalInfo"
-                    className="block text-sm font-medium text-charcoal mb-1.5"
-                  >
+                  <label htmlFor="additionalInfo" className="block text-sm font-medium text-charcoal mb-1.5">
                     Anything else I should know?
                   </label>
                   <textarea
