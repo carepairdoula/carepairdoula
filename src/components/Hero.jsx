@@ -34,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
               className="text-lg sm:text-xl text-charcoal-light leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Birth is transformative. Pregnancy, labour, and early parenthood are often intense and challenging experiences. Having customized and dedicated support as you bring your baby into the world, and adjust to this exciting change, can make all the difference. You deserve someone who is fully present and attentive to your unique situation.
+              Birth is transformative. Pregnancy, labour, and early parenthood are often intense and challenging experiences. Having dedicated, customized support from a certified doula can make all the difference. You deserve someone who is fully present and attentive to your unique situation.
             </motion.p>
 
             <motion.div
@@ -86,21 +86,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:block"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="w-6 h-10 border-2 border-charcoal/20 rounded-full flex justify-center pt-2"
-        >
-          <div className="w-1.5 h-1.5 bg-coral rounded-full" />
-        </motion.div>
-      </motion.div>
+
     </section>
   )
 }
