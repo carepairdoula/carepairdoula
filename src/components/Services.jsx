@@ -16,10 +16,10 @@ const educationSessions = [
     tagline: 'Your comprehensive guide to labour and birth',
     topics: [
       'Late pregnancy: physical changes, prelabour signs, and preparing your body',
-      'The three stages of labour: what to expect, hour by hour',
+      'Stages of labour and labouring at home',
       'Recognizing true labour and when to go to the hospital or birthing location',
       'Vaginal birth process and what happens immediately after',
-      'Caesarean birth: indications, procedure, and what to expect',
+      'Caesarean birth process and what to expect',
       'Creating flexible birth preferences that honour your values',
       'Immediate postpartum: golden hour, skin-to-skin, and first moments with baby',
       'Pain management: natural comfort measures, breathing, movement, positioning, and medical options including epidurals',
@@ -37,7 +37,8 @@ const educationSessions = [
       'Newborn appearance, behaviour, and what\'s normal in the first weeks',
       'Safe sleep practices and SIDS prevention',
       'Diapering, bathing, and basic newborn care',
-      'Feeding overview: breastfeeding and formula basics',
+      'Breastfeeding, bottle feeding, formula feeding',
+      'Pumping, short and long-term milk storage and safe handling',
       'Recognizing baby\'s cues and soothing techniques',
       'Setting up your postpartum space and preparing practical support',
     ],
@@ -56,7 +57,7 @@ const educationSessions = [
       'Practical postpartum help: what partners can do in the early weeks',
       'Feeding support and overnight strategies',
       'Protecting your partner\'s recovery and mental health',
-      'Intimacy, communication, and relationship care after baby',
+      'Guilt-free selfcare',
     ],
   },
   {
@@ -143,11 +144,24 @@ export default function Services() {
 
               <div className="p-8">
                 <p className="text-charcoal-light leading-relaxed mb-3">
-                  Hospital classes cover the basics. These sessions go deeper. Held in the comfort of your own home, each session is tailored to your questions, your concerns, and your specific situation — not a room full of strangers.
+                  Each session is designed to empower you with knowledge, confidence and practical skills as you adjust to this exciting change. We provide interactive sessions designed for comprehension and retention.
                 </p>
-                <p className="text-charcoal-light leading-relaxed mb-6">
-                  You get my full attention, honest answers, and information you can actually use. Your partner learns how to be genuinely helpful, not just present. Sensitive topics get the privacy they deserve.
-                </p>
+
+                <p className="text-charcoal font-medium mb-3">Why choose in-home education?</p>
+                <div className="space-y-2 mb-6">
+                  {[
+                    'Personalized Attention: Every question answered, every concern addressed. Curriculum customized to your specific needs.',
+                    'Comfort and Convenience: Learn in your own space without travel.',
+                    'Partner Engagement: Intimate setting encourages full participation.',
+                    'Flexible Pacing: Sessions adapt to your learning style and needs.',
+                    'Hands-On Practice: Practice with your own baby gear or ours.',
+                    'Confidential Space: Discuss sensitive topics privately.',
+                  ].map((item, i) => (
+                    <p key={i} className="text-charcoal-light leading-relaxed pl-4 border-l-2 border-cream-dark">
+                      {item}
+                    </p>
+                  ))}
+                </div>
 
                 <div className="space-y-2 mb-8">
                   {educationSessions.map((session, index) => (
@@ -266,7 +280,7 @@ export default function Services() {
             <div id="nursery-service" className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:shadow-sage/10">
               <div className="px-8 pt-8 pb-6 bg-gradient-to-br from-sage/10 to-sage-light/5">
                 <h3 className="font-serif text-2xl sm:text-3xl text-charcoal mb-2">
-                  Nursery Setup, Curation & Organisation
+                  Nursery Curation & Organisation
                 </h3>
                 <p className="font-medium text-sage">A calm, functional space. Ready when you are.</p>
               </div>
@@ -295,30 +309,34 @@ export default function Services() {
                 </div>
 
                 <p className="text-charcoal font-medium mb-3">Before & After:</p>
-                <div className="grid grid-cols-2 gap-3 mb-8">
-                  <div className="relative">
+                <div className="space-y-2 mb-6">
+                  <div className="grid grid-cols-2 gap-3">
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-1.jpg" alt="Nursery before" className="w-full rounded-2xl object-cover" />
-                    <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
-                  </div>
-                  <div className="relative">
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-1.jpg" alt="Nursery after" className="w-full rounded-2xl object-cover" />
-                    <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
                   </div>
-                  <div className="relative">
+                  <div className="grid grid-cols-2 gap-3 pt-4">
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-2.jpg" alt="Nursery before" className="w-full rounded-2xl object-cover" />
-                    <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
-                  </div>
-                  <div className="relative">
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-2.jpg" alt="Nursery after" className="w-full rounded-2xl object-cover" />
-                    <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
                   </div>
-                  <div className="relative">
+                  <div className="grid grid-cols-2 gap-3 pt-4">
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-before-3.jpg" alt="Nursery before" className="w-full rounded-2xl object-cover" />
-                    <span className="absolute top-3 left-3 bg-charcoal/70 text-white text-xs font-medium px-3 py-1 rounded-full">Before</span>
-                  </div>
-                  <div className="relative">
                     <img src="https://raw.githubusercontent.com/carepairdoula/carepairdoula/main/src/assets/images/nursery-after-3.jpg" alt="Nursery after" className="w-full rounded-2xl object-cover" />
-                    <span className="absolute top-3 left-3 bg-sage/80 text-white text-xs font-medium px-3 py-1 rounded-full">After</span>
+                  </div>
+                </div>
+
+                <div className="bg-cream rounded-2xl p-6 mb-8">
+                  <div className="text-coral/20 text-5xl font-serif leading-none mb-2">"</div>
+                  <p className="text-charcoal-light leading-relaxed italic mb-4">
+                    As a new mom, there are already so many things to think about, and having Mimi organize our nursery ended up being one of the most helpful decisions we made. I had piles of baby shower gifts and items sitting in the room, and between pregnancy and postpartum exhaustion, I couldn't muster the energy to tackle it myself. What felt overwhelming to me, Mimi completely transformed. She organized everything thoughtfully, packed away items I wouldn't need right away into vacuum-sealed bags, and created a space that was not only beautiful, but practical for everyday life. During those exhausting postpartum days and middle-of-the-night moments, I knew exactly where everything was. She thought of details and systems I would never have considered on my own, and it gave me such peace of mind. She even provided a maintenance plan afterward so I could actually keep everything organized long-term. If you're a tired new mom wondering if it's worth it — it absolutely is.
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-coral-light/30 to-sage-light/30 flex items-center justify-center">
+                      <span className="font-serif text-charcoal text-lg">S</span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-charcoal">Simone</p>
+                      <p className="text-xs text-charcoal-light">Nursery Curation & Organization</p>
+                    </div>
                   </div>
                 </div>
 
@@ -348,7 +366,7 @@ export default function Services() {
               </div>
               <div className="p-8">
                 <p className="text-charcoal-light leading-relaxed mb-8">
-                  Celebrate new beginnings with a gift certificate for birth and postpartum support services. Perfect for friends and family who want to offer meaningful help during this transformative time. Gift certificates can be used towards any personalized care package, ensuring the recipient receives exactly the support they need.
+                  Celebrate new beginnings with a gift certificate! Perfect for friends, family and coworkers who want to offer meaningful help during this special time. Gift certificates can be used towards any available service, ensuring the recipient receives exactly the support they need.
                 </p>
                 <Link
                   to="/gift-certificate"
