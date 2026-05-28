@@ -63,12 +63,12 @@ export default function Navigation() {
           <button
             type="button"
             onClick={() => scrollToSection('hero')}
-            className="flex items-center cursor-pointer bg-transparent border-none"
+            className="-ml-2 flex items-center cursor-pointer bg-transparent border-none"
           >
             <img
               src={logo}
               alt="Carepair - Customized Support For Birth & Beyond"
-              className="h-32 sm:h-40 w-auto brightness-0"
+              className="h-28 sm:h-24 w-auto brightness-0 opacity-90"
             />
           </button>
 
