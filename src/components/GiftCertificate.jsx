@@ -12,6 +12,7 @@ export default function GiftCertificate() {
     recipientEmail: '',
     recipientDueDate: '',
     amount: '',
+    isGroupGift: false,
     message: '',
     additionalInfo: '',
   })
@@ -49,6 +50,7 @@ export default function GiftCertificate() {
           recipientEmail: '',
           recipientDueDate: '',
           amount: '',
+          isGroupGift: false,
           message: '',
           additionalInfo: '',
         })
@@ -96,7 +98,7 @@ export default function GiftCertificate() {
               Gift Certificate Request
             </h1>
             <p className="text-lg text-charcoal-light">
-              Give the gift of support. Fill out this form and we'll be in touch to arrange your gift certificate.
+              Give the gift of support. Fill out this form and I'll be in touch to arrange your gift certificate.
             </p>
           </motion.div>
 
@@ -220,7 +222,7 @@ export default function GiftCertificate() {
                     </div>
                     <div>
                       <label htmlFor="recipientDueDate" className="block text-sm font-medium text-charcoal mb-1.5">
-                        Recipient's Due Date <span className="text-charcoal-light font-normal">(if known)</span>
+                        Baby's Due Date/Birth Date
                       </label>
                       <input
                         type="date"
@@ -259,7 +261,21 @@ export default function GiftCertificate() {
 
                 <div className="border-t border-cream-dark" />
 
-                {/* Personal Message */}
+                {/* Group Gift */}
+                <div>
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="isGroupGift"
+                      checked={formData.isGroupGift}
+                      onChange={(e) => setFormData(prev => ({ ...prev, isGroupGift: e.target.checked }))}
+                      className="mt-1 w-4 h-4 rounded border-cream-dark text-coral focus:ring-coral/20 cursor-pointer"
+                    />
+                    <span className="text-charcoal-light text-sm leading-relaxed">This is a group gift.</span>
+                  </label>
+                </div>
+
+                <div className="border-t border-cream-dark" />
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-charcoal mb-1.5">
                     Personal message to include with gift certificate
@@ -298,10 +314,6 @@ export default function GiftCertificate() {
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Gift Certificate Request'}
                 </button>
-
-                <p className="text-center text-charcoal-light text-sm">
-                  I'll be in touch within 24-48 hours to finalize your gift.
-                </p>
               </form>
             )}
           </motion.div>
