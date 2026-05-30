@@ -147,14 +147,14 @@ export default function Services() {
                   Each session is designed to empower you with knowledge, confidence and practical skills as you adjust to this exciting change. I provide interactive sessions designed for comprehension and retention.
                 </p>
 
-                <p className="text-charcoal font-medium mb-3">Why choose in-home education?</p>
+                <p className="text-charcoal font-medium mb-3">Benefits of In-Home Prenatal Education</p>
                 <div className="space-y-2 mb-6">
                   {[
-                    'Personalized Attention: Every question answered, every concern addressed. Curriculum customized to your specific needs.',
+                    'Personalized Attention: Every question answered, every concern addressed.',
                     'Comfort and Convenience: Learn in your own space without travel.',
                     'Partner Engagement: Intimate setting encourages full participation.',
                     'Flexible Pacing: Sessions adapt to your learning style and needs.',
-                    'Hands-On Practice: Practice with your own baby gear or ours.',
+                    'Hands-On: Practice with your own baby gear or ours.',
                     'Confidential Space: Discuss sensitive topics privately.',
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
