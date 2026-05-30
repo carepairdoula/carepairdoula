@@ -144,7 +144,7 @@ export default function Services() {
 
               <div className="p-8">
                 <p className="text-charcoal-light leading-relaxed mb-3">
-                  Each session is designed to empower you with knowledge, confidence and practical skills as you adjust to this exciting change. We provide interactive sessions designed for comprehension and retention.
+                  Each session is designed to empower you with knowledge, confidence and practical skills as you adjust to this exciting change. I provide interactive sessions designed for comprehension and retention.
                 </p>
 
                 <p className="text-charcoal font-medium mb-3">Why choose in-home education?</p>
@@ -158,7 +158,7 @@ export default function Services() {
                     'Confidential Space: Discuss sensitive topics privately.',
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <span className="mt-2 w-2 h-2 rounded-full bg-coral flex-shrink-0" />
+                      <span className="mt-1 text-coral flex-shrink-0 text-xs">◆</span>
                       <p className="text-charcoal-light leading-relaxed">{item}</p>
                     </div>
                   ))}
@@ -252,9 +252,10 @@ export default function Services() {
                     <p className="text-charcoal font-medium mb-3">What's Included:</p>
                     <div className="space-y-2 mb-8">
                       {service.includes.map((item, i) => (
-                        <p key={i} className="text-charcoal-light leading-relaxed pl-4 border-l-2 border-cream-dark">
-                          {item}
-                        </p>
+                        <div key={i} className="flex items-start gap-3">
+                          <span className="mt-1 text-coral flex-shrink-0 text-xs">◆</span>
+                          <p className="text-charcoal-light leading-relaxed">{item}</p>
+                        </div>
                       ))}
                     </div>
                     <a
@@ -303,9 +304,10 @@ export default function Services() {
                     'Vacuum seal bags, closet organizers, dresser dividers, and labels included',
                     'A simple maintenance plan so the system stays intact',
                   ].map((item, i) => (
-                    <p key={i} className="text-charcoal-light leading-relaxed pl-4 border-l-2 border-cream-dark">
-                      {item}
-                    </p>
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="mt-1 text-coral flex-shrink-0 text-xs">◆</span>
+                      <p className="text-charcoal-light leading-relaxed">{item}</p>
+                    </div>
                   ))}
                 </div>
 
