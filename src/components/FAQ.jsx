@@ -23,7 +23,7 @@ export default function FAQ() {
     {
       question: 'What is the difference between a doula and a midwife?',
       answer:
-        "A midwife is a medical professional who can deliver your baby, perform exams, and handle clinical care. A doula provides emotional, physical, and informational support. We work alongside your medical team (whether that's an OB or a midwife) as your dedicated support person.",
+        "A midwife is a medical professional who can deliver your baby, perform exams, and handle clinical care. A doula provides emotional, physical, and informational support. I work alongside your medical team (whether that's an OB or a midwife) as your dedicated support person.",
     },
     {
       question: 'Are doulas covered by insurance?',
