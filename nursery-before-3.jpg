@@ -1,0 +1,97 @@
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+
+const faqs = [
+  {
+    question: "What if I'm planning a hospital birth?",
+    answer:
+      "Doulas are welcome in any birth setting: hospitals, birth centres, and home births. In fact, hospital births are where many families find doula support most valuable. When you are navigating an unfamiliar environment with rotating staff and medical interventions, having one consistent person who knows your wishes makes all the difference. I work alongside your medical team, not against them.",
+  },
+  {
+    question: 'When should I book a doula?',
+    answer:
+      "For birth doula support, the earlier the better, ideally during your second trimester. This gives us time to build a relationship, work through your birth preferences, and make sure you feel fully prepared. That said, if your due date is approaching, that is great too. Reach out and let's talk.\n\nFor postpartum doula support, you can book anytime, including after the baby arrives. Many families do not realize they need support until then.",
+  },
+  {
+    question: 'What if my partner feels replaced?',
+    answer:
+      "This is a common concern, and I take it seriously. My job is not to replace your partner. It is to empower them. During labour, I guide partners on how to help with comfort measures, when to offer support, and when to step back. Most partners tell me afterward that they felt more involved, not less.",
+  },
+  {
+    question: 'What is the difference between a doula and a midwife?',
+    answer:
+      "A midwife is a medical professional who can deliver your baby, perform exams, and handle clinical care. A doula provides emotional, physical, and informational support. I work alongside your medical team (whether that is an OB or a midwife) as your dedicated support person.",
+  },
+  {
+    question: 'Are doulas covered by insurance?',
+    answer:
+      "Although doula services are not covered by OHIP, some insurance plans do provide coverage. Check with your provider for details.",
+  },
+]
+
+export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState(null)
+
+  return (
+    <section id="faq" className="py-16 sm:py-28 bg-cream-dark/50 relative">
+      <div className="max-w-3xl mx-auto px-6 sm:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="text-center mb-14"
+        >
+          <p className="text-emerald text-xs sm:text-sm uppercase tracking-[0.4em] mb-5">FAQ</p>
+          <h2 className="text-5xl sm:text-6xl text-espresso">Questions you might have</h2>
+        </motion.div>
+
+        <div className="space-y-3">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={faq.question}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: index * 0.07 }}
+              className="bg-white rounded-2xl overflow-hidden border border-sand"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                aria-expanded={openIndex === index}
+                className="w-full px-7 py-5 flex items-center justify-between gap-4 text-left bg-transparent border-none cursor-pointer group"
+              >
+                <span className="font-serif text-lg text-espresso group-hover:text-coral transition-colors duration-200">
+                  {faq.question}
+                </span>
+                <span
+                  className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm transition-all duration-300 ${
+                    openIndex === index ? 'bg-coral text-ivory rotate-45' : 'bg-cream-dark text-ink-light'
+                  }`}
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+              </button>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-7 pb-6 text-ink-light leading-relaxed whitespace-pre-line">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

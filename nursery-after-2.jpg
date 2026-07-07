@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #FDF9F3;
+  --color-cream: #FDF9F3;
+  --color-cream-dark: #F3EADD;
+  --color-sand: #E8DCCB;
+  --color-blush: #F7E3D6;
+  --color-espresso: #2B2420;
+  --color-ink: #2B2420;
+  --color-ink-light: #5B534C;
+  --color-coral: #E2725B;
+  --color-coral-light: #F2A48E;
+  --color-coral-dark: #C25A44;
+  --color-emerald: #2F6B4F;
+  --color-emerald-deep: #24523D;
+  --color-emerald-light: #4E8A6C;
+  --color-gold: #C29B40;
+  --color-charcoal: #2B2420;
+  --color-charcoal-light: #5B534C;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Montserrat', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 88px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-espresso);
+  background-color: var(--color-ivory);
+  line-height: 1.75;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+::selection {
+  background-color: var(--color-coral);
+  color: var(--color-ivory);
+}
+
+.outline-number {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-coral);
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 22s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 36s linear infinite;
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float-soft {
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1.5px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-spin-slow, .animate-marquee, .animate-float-soft { animation: none; }
+}

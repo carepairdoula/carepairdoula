@@ -1,0 +1,27 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import '../index.css'
+import ServicePage from './ServicePageLayout'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <ServicePage {...{
+      eyebrow: 'Concierge care for growing families',
+      title: 'Nursery Curation & Organisation',
+      tagline: 'A calm, functional space. Ready when you are.',
+      price: 'Starting at $440',
+      intro: 'Gifts pile up fast. Clothes come in every size. Gear arrives faster than you can open it. I transform your nursery into a beautiful, logical space where every item is sorted, stored, and within reach.',
+      includedTitle: "What's included",
+      bullets: [
+        'A complete hands on setup of your nursery: dresser, closet, changing station, and storage',
+        'Every item sorted by immediate need, upcoming use, and long term storage so nothing gets lost',
+        'A custom organization system built around how you will actually use the space',
+        'Vacuum seal bags, closet organizers, dresser dividers, and labels included',
+        'A simple maintenance plan so the system stays intact',
+      ],
+      quote: "As a new mom, there are already so many things to think about, and having Mimi organize our nursery ended up being one of the most helpful decisions we made. What felt overwhelming to me, Mimi completely transformed. She organized everything thoughtfully, packed away items I wouldn't need right away into vacuum-sealed bags, and created a space that was not only beautiful, but practical for everyday life.",
+      quoteAuthor: 'Simone',
+      quoteTag: 'Nursery Curation & Organization',
+    }} />
+  </StrictMode>,
+)
